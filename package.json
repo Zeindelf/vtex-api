@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "vtex-api",
+  "version": "0.0.1",
+  "description": "A collection of VTEX APIs methods",
+  "scripts": {
+    "start": "",
+    "lint": "echo Pass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeindelf/vtex-api"
+  },
+  "homepage": "https://github.com/zeindelf/vtex-api#readme",
+  "bugs": {
+    "url": "https://bitbucket.org/enext/miose/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Zeindelf",
+    "email": "zeindelf@hotmail.com",
+    "homepage": "https://zeindelf.com"
+  },
+  "keywords": [
+    "vtex",
+    "api"
+  ],
+  "dependencies": {
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "10.0.0-beta.4"
+  },
+  "engines": {
+    "node": ">=10.17.0",
+    "npm": ">=6.4.1"
+  }
+}

@@ -1,2 +1,3 @@
-# vtex-api
-Collection of VTEX APIs methods
+# VTEX API
+
+A collection of VTEX APIs methods
