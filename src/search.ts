@@ -30,7 +30,7 @@ const { hasOwnProperty } = Object.prototype;
  */
 const search = (
   params: Params,
-  fields: [],
+  fields: any[],
   entity: string,
   limit = 49,
   offset = 0,

@@ -8,8 +8,15 @@
     "sourceMap": false,
     "strict": true
   },
+  "include": [
+    "**/src/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
-    "lib"
+    "lib",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__specs__/**/*",
+    "**/__tests__/**/*"
   ]
 }

@@ -13,7 +13,7 @@ type Response = {
  *
  * @return {object}          The parsed JSON from the request
  */
-const parseJSON = (response: Response) => {
+const parseJSON = (response: Response): {} | Promise<any> => {
   const { status } = response;
 
   return status === 204 || status === 205 ? { ok: true } : response.json();
