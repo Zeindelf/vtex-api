@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign, no-underscore-dangle */
 import isObject from './internal/isObject';
 import parseFileds from './internal/parseFields';
 

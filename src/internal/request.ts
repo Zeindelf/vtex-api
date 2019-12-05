@@ -45,10 +45,8 @@ const checkStatus = (response: Response) => {
  *
  * @return {object}           The response data
  */
-const request = (url: string, options: {}): Promise<any> => {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON);
-};
+const request = (url: string, options: {}): Promise<any> => fetch(url, options)
+  .then(checkStatus)
+  .then(parseJSON);
 
 export default request;

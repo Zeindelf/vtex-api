@@ -16,7 +16,7 @@
     "build:cjs": "tsc -d",
     "build:es": "tsc -m esNext --outDir esm",
     "build": "yarn clear && yarn build:cjs && yarn build:es",
-    "lint": "echo Pass",
+    "lint": "eslint **/*{.js,.ts} --fix --color",
     "test": "echo 'No tests at this time'"
   },
   "repository": {
@@ -43,6 +43,12 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-promise": "^4.2.1",
     "husky": "^3.1.0",
     "lint-staged": "10.0.0-beta.4",
     "rimraf": "^3.0.0",

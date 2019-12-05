@@ -1,4 +1,5 @@
-//@ts-ignore
+/* eslint-disable no-restricted-syntax */
+// @ts-ignore
 import stringify from 'querystring/encode';
 
 import request from './internal/request';
@@ -13,18 +14,22 @@ const call = (
   data: {},
   entity: string,
   type: string,
-  headersOpts: Headers | null
+  headersOpts: Headers | null,
 ): Promise<any> => {
   const mountedUrl = `/api/dataentities/${entity || 'CL'}/${type || 'search'}/${id || ''}`;
   const url = method === 'GET' ? `${mountedUrl}?${stringify(data)}` : mountedUrl;
   const headers = new Headers();
-  const mergedHeaders = Object.assign({},{
+  const mergedHeaders = {
     Accept: 'application/vnd.vtex.ds.v10+json',
     'Content-Type': 'application/json; charset=utf-8',
-  }, headersOpts);
+    ...headersOpts,
+  };
 
   for (const key in mergedHeaders) {
-    headers.append(key, mergedHeaders[key]);
+    if ({}.hasOwnProperty.call(mergedHeaders, key)) {
+      // @ts-ignore
+      headers.append(key, mergedHeaders[key]);
+    }
   }
 
   const config = {

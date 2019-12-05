@@ -6,7 +6,7 @@ const parseFileds = (fields: any): string => {
   }
 
   fields.push('id');
-  return uniq(fields).join(',')
+  return uniq(fields).join(',');
 };
 
 export default parseFileds;

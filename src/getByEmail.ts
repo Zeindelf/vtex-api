@@ -15,7 +15,7 @@ const getByEmail = (email: string): Promise<any> => {
     return Promise.reject(new Error('Invalid email'));
   }
 
-  //@ts-ignore
+  // @ts-ignore
   return search({ email }, ['email', 'id'], null, 1, 0, null);
 };
 
