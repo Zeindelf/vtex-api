@@ -2,9 +2,22 @@
   "name": "vtex-api",
   "version": "0.0.1",
   "description": "A collection of VTEX APIs methods",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "lib/",
+    "esm/"
+  ],
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "scripts": {
-    "start": "",
-    "lint": "echo Pass"
+    "clear": "rimraf lib esm",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm",
+    "build": "yarn clear && yarn build:cjs && yarn build:es",
+    "lint": "echo Pass",
+    "test": "echo 'No tests at this time'"
   },
   "repository": {
     "type": "git",
@@ -31,7 +44,9 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "husky": "^3.1.0",
-    "lint-staged": "10.0.0-beta.4"
+    "lint-staged": "10.0.0-beta.4",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.3"
   },
   "engines": {
     "node": ">=10.17.0",
