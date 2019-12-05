@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "vtex-api",
   "version": "0.0.1",
   "description": "A collection of VTEX APIs methods",
