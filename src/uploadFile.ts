@@ -7,6 +7,7 @@ import callAttachment from './callAttachment';
  * @param {string} entity The entity of the document to insert
  * @param {string} field  Document file field
  * @param {object} file   Parsed file
+ *
  * @return {promise}
  */
 const uploadFile = (

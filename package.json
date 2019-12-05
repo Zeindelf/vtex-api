@@ -13,7 +13,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "clear": "rimraf lib esm",
-    "build:cjs": "tsc",
+    "build:cjs": "tsc -d",
     "build:es": "tsc -m esNext --outDir esm",
     "build": "yarn clear && yarn build:cjs && yarn build:es",
     "lint": "echo Pass",
