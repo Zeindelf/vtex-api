@@ -1,4 +1,4 @@
-import callAttachment from './callAttachment';
+import callAttachment from './services/callAttachment';
 
 /**
  * Insert file to a document

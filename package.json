@@ -1,6 +1,6 @@
 {
   "name": "vtex-api",
-  "version": "0.0.1",
+  "version": "0.1.0-canary.0",
   "description": "A collection of VTEX APIs methods",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -12,11 +12,14 @@
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "preinstall": "use-yarn",
     "clear": "rimraf lib esm",
     "build:cjs": "tsc -d",
     "build:es": "tsc -m esNext --outDir esm",
     "build": "yarn clear && yarn build:cjs && yarn build:es",
-    "lint": "eslint **/*{.js,.ts} --fix --color",
+    "lint:js": "eslint **/*{.js,.ts} --fix --color",
+    "lint:types": "tsc --noEmit",
+    "lint": "yarn lint:js && yarn lint:types",
     "test": "jest --maxWorkers 2",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
@@ -39,9 +42,6 @@
     "vtex",
     "api"
   ],
-  "dependencies": {
-    "querystring": "^0.2.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
@@ -58,7 +58,8 @@
     "lint-staged": "10.0.0-beta.4",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "use-yarn": "^2.2.0"
   },
   "engines": {
     "node": ">=10.17.0",

@@ -1,7 +1,7 @@
-export { default as search } from './search';
-export { default as insert } from './insert';
+export { default as searchDocument } from './searchDocument';
+export { default as insertDocument } from './insertDocument';
 export { default as getUser } from './getUser';
-export { default as insertUpdate } from './insertUpdate';
-export { default as insertUpdateUser } from './insertUpdateUser';
-export { default as newsletter } from './newsletter';
+export { default as updateDocument } from './updateDocument';
+export { default as updateUser } from './updateUser';
+export { default as newsletterOptIn } from './newsletterOptIn';
 export { default as uploadFile } from './uploadFile';

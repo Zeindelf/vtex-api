@@ -1,8 +1,7 @@
 /* eslint-disable no-param-reassign, no-underscore-dangle */
-import isObject from './internal/isObject';
 import parseFileds from './internal/parseFields';
 
-import call from './call';
+import call from './services/call';
 
 type Filters = {
   _where?: string;
@@ -13,8 +12,6 @@ type Filters = {
 type Params = {
   [key: string]: any;
 };
-
-const { hasOwnProperty } = Object.prototype;
 
 /**
  * Performs a single search
@@ -28,33 +25,21 @@ const { hasOwnProperty } = Object.prototype;
  *
  * @return {promise}
  */
-const search = (
+const searchDocument = (
   params: Params,
   fields: any[],
   entity: string,
   limit = 49,
   offset = 0,
-  filters: Filters,
+  filters: Filters | null,
 ): Promise<any> => {
   const headers = { 'REST-Range': `resources=${offset}-${limit + offset}` };
 
-  params._fields = parseFileds(fields);
+  const mergedParams = Object.assign(params, filters, {
+    _fields: parseFileds(fields),
+  });
 
-  if (isObject(filters)) {
-    if (hasOwnProperty.call(filters, '_where')) {
-      params._where = filters._where;
-    }
-
-    if (hasOwnProperty.call(filters, '_keyword')) {
-      params._keyword = filters._keyword;
-    }
-
-    if (hasOwnProperty.call(filters, '_sort')) {
-      params._sort = filters._sort;
-    }
-  }
-
-  return call('GET', null, params, entity, 'search', headers);
+  return call('GET', null, mergedParams, entity, 'search', headers);
 };
 
-export default search;
+export default searchDocument;

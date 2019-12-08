@@ -1,4 +1,4 @@
-import request from './internal/request';
+import request from '../internal/request';
 
 const callAttachment = (
   id: string | number,

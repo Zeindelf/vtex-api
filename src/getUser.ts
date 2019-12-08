@@ -1,8 +1,8 @@
 import resultOk from './internal/resultOk';
 import head from './internal/head';
 
-import getByEmail from './getByEmail';
-import get from './get';
+import getByEmail from './services/getByEmail';
+import get from './services/get';
 
 /**
  * Get User by mail
