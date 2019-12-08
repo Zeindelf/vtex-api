@@ -1,4 +1,4 @@
-import call from './call';
+import call from './services/call';
 
 /**
  * Insert a document
@@ -8,8 +8,8 @@ import call from './call';
  *
  * @return {promise}
  */
-const insert = (data: {}, entity: string): Promise<any> => (
+const insertDocument = (data: {}, entity: string): Promise<any> => (
   call('POST', null, data, entity, 'documents', null)
 );
 
-export default insert;
+export default insertDocument;

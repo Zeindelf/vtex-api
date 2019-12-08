@@ -1,4 +1,4 @@
-import partialUpdate from './partialUpdate';
+import partialUpdate from './services/partialUpdate';
 
 /**
  * Insert/update a document
@@ -9,8 +9,8 @@ import partialUpdate from './partialUpdate';
  *
  * @return {promise}
  */
-const insertUpdate = (id: string | number, data: {}, entity: string): Promise<any> => (
+const updateDocument = (id: string | number, data: {}, entity: string): Promise<any> => (
   partialUpdate(id, data, entity)
 );
 
-export default insertUpdate;
+export default updateDocument;

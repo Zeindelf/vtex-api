@@ -1,4 +1,5 @@
-import parseFileds from './internal/parseFields';
+import parseFileds from '../internal/parseFields';
+
 import call from './call';
 
 /**

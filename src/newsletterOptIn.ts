@@ -1,4 +1,4 @@
-import insertUpdateUser from './insertUpdateUser';
+import updateUser from './updateUser';
 
 /**
  * Newsletter opt-in / opt-out
@@ -9,8 +9,8 @@ import insertUpdateUser from './insertUpdateUser';
  *
  * @return {promise}
  */
-const newsletter = (email: string, isNewsletterOptIn = true, data = {}): Promise<any> => (
-  insertUpdateUser(email, { isNewsletterOptIn, ...data })
+const newsletterOptIn = (email: string, isNewsletterOptIn = true, data = {}): Promise<any> => (
+  updateUser(email, { isNewsletterOptIn, ...data })
 );
 
-export default newsletter;
+export default newsletterOptIn;

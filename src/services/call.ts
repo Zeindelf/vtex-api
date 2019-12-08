@@ -1,8 +1,6 @@
 /* eslint-disable no-restricted-syntax */
-// @ts-ignore
-import stringify from 'querystring/encode';
-
-import request from './internal/request';
+import stringify from '../internal/stringify';
+import request from '../internal/request';
 
 type Headers = {
   [key: string]: any;

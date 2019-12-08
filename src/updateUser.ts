@@ -1,9 +1,10 @@
 import head from './internal/head';
 import resultOk from './internal/resultOk';
 
-import getByEmail from './getByEmail';
-import partialUpdate from './partialUpdate';
-import insert from './insert';
+import getByEmail from './services/getByEmail';
+import partialUpdate from './services/partialUpdate';
+
+import insertDocument from './insertDocument';
 
 /**
  * Update a user if the email exists, or insert a new one if it doesn't
@@ -13,12 +14,12 @@ import insert from './insert';
  *
  * @return {promise}
  */
-const insertUpdateUser = async (email: string, data: {}): Promise<any> => {
+const updateUser = async (email: string, data: {}): Promise<any> => {
   const result = await getByEmail(email);
 
   return resultOk(result)
     ? partialUpdate(head(result).id, data, 'CL')
-    : insert({ email, ...data }, 'CL');
+    : insertDocument({ email, ...data }, 'CL');
 };
 
-export default insertUpdateUser;
+export default updateUser;
