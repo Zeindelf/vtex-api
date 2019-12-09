@@ -17,6 +17,9 @@ module.exports =  {
     sourceType: 'module',
     project: './tsconfig.json',
     createDefaultProgram: true,
+    ecmaFeatures: {
+      modules: true,
+    },
   },
   plugins: [
     'import',
@@ -24,8 +27,9 @@ module.exports =  {
     'jest',
   ],
   rules:  {
-    'linebreak-style': 0, // Avoid LF/CRLF on Win/Linux/Mac
-    'import/no-unresolved': 0,
+    'linebreak-style': 'off', // Avoid LF/CRLF on Win/Linux/Mac
+    'import/no-unresolved': 'off',
+    'jest/no-hooks': 'off',
   },
   globals: {
     jest: true,

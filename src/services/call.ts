@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-syntax */
+
 import stringify from '../internal/stringify';
 import request from '../internal/request';
 
@@ -17,16 +18,14 @@ const call = (
   const mountedUrl = `/api/dataentities/${entity || 'CL'}/${type || 'search'}/${id || ''}`;
   const url = method === 'GET' ? `${mountedUrl}?${stringify(data)}` : mountedUrl;
   const headers = new Headers();
-  const mergedHeaders = {
-    Accept: 'application/vnd.vtex.ds.v10+json',
-    'Content-Type': 'application/json; charset=utf-8',
-    ...headersOpts,
-  };
 
-  for (const key in mergedHeaders) {
-    if ({}.hasOwnProperty.call(mergedHeaders, key)) {
+  headers.append('Accept', 'application/vnd.vtex.ds.v10+json');
+  headers.append('Content-Type', 'application/json; charset=utf-8');
+
+  for (const key in headersOpts) {
+    if ({}.hasOwnProperty.call(headersOpts, key)) {
       // @ts-ignore
-      headers.append(key, mergedHeaders[key]);
+      headers.append(key, headersOpts[key]);
     }
   }
 

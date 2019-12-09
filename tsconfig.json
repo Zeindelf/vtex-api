@@ -6,7 +6,8 @@
     "rootDir": "src",
     "outDir": "lib",
     "sourceMap": false,
-    "strict": true
+    "strict": true,
+    "allowJs": true
   },
   "include": [
     "**/src/**/*.ts"

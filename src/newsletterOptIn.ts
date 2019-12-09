@@ -1,3 +1,5 @@
+import assign from './internal/assign';
+
 import updateUser from './updateUser';
 
 /**
@@ -9,8 +11,9 @@ import updateUser from './updateUser';
  *
  * @return {promise}
  */
-const newsletterOptIn = (email: string, isNewsletterOptIn = true, data = {}): Promise<any> => (
-  updateUser(email, { isNewsletterOptIn, ...data })
-);
+const newsletterOptIn = (email: string, isNewsletterOptIn = true, data = {}): Promise<any> => {
+  const obj = assign({ isNewsletterOptIn }, data);
+  return updateUser(email, obj);
+};
 
 export default newsletterOptIn;

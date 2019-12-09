@@ -13,10 +13,10 @@ type Response = {
  *
  * @return {object}          The parsed JSON from the request
  */
-const parseJSON = (response: Response): {} | Promise<any> => {
+const parseJSON = (response: Response): Promise<any> | null => {
   const { status } = response;
 
-  return status === 204 || status === 205 ? { ok: true } : response.json();
+  return status === 204 || status === 205 ? null : response.json();
 };
 
 /**
@@ -45,7 +45,7 @@ const checkStatus = (response: Response) => {
  *
  * @return {object}           The response data
  */
-const request = (url: string, options: {}): Promise<any> => fetch(url, options)
+const request = (url: string, options?: {}): Promise<any> => fetch(url, options)
   .then(checkStatus)
   .then(parseJSON);
 
