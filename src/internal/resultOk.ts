@@ -8,7 +8,7 @@ import head from './head';
  * @return {boolean}
  */
 const resultOk = (result: object[]): boolean => (
-  Boolean(result !== undefined && result.length && head(result).id !== undefined)
+  !!(result !== undefined && result.length && head(result).id !== undefined)
 );
 
 export default resultOk;

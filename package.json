@@ -17,11 +17,10 @@
     "build:es": "tsc -m esNext --outDir esm",
     "build": "yarn clear && yarn build:cjs && yarn build:es",
     "lint:js": "eslint **/*{.js,.ts} --fix --color",
-    "lint:types": "tsc --noEmit",
-    "lint": "yarn lint:js && yarn lint:types",
-    "test": "jest --maxWorkers 2",
+    "lint": "yarn lint:js",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "jest --bail"
   },
   "repository": {
     "type": "git",
@@ -29,7 +28,7 @@
   },
   "homepage": "https://github.com/zeindelf/vtex-api#readme",
   "bugs": {
-    "url": "https://bitbucket.org/enext/miose/issues"
+    "url": "https://github.com/zeindelf/vtex-api/issues"
   },
   "license": "MIT",
   "author": {
