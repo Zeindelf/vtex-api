@@ -20,7 +20,7 @@
     "lint": "yarn lint:js",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "test": "jest --bail"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
