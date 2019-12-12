@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - '10.17.0'
+cache:
+  yarn: true
+  directories:
+    - node_modules
+script: yarn lint && yarn test
+after_success: npx codecov --token:9a4c66cd-ab82-4143-a08b-599459d39412
