@@ -1,3 +1,4 @@
+export { default as request } from './request';
 export { default as searchDocument } from './searchDocument';
 export { default as insertDocument } from './insertDocument';
 export { default as getUser } from './getUser';

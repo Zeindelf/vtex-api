@@ -1,10 +1,10 @@
-type Response = {
+interface IResponse {
   status: number,
   statusText: string;
   json(): Promise<any>;
   json<T>(): Promise<T>;
   text(): Promise<string>;
-};
+}
 
 /**
  * Parses the JSON returned by a network request
@@ -13,7 +13,7 @@ type Response = {
  *
  * @return {object}          The parsed JSON from the request
  */
-const parseJSON = (response: Response): Promise<any> | null => {
+const parseJSON = (response: IResponse): Promise<any> | null => {
   const { status } = response;
 
   return status === 204 || status === 205 ? null : response.json();
@@ -26,7 +26,7 @@ const parseJSON = (response: Response): Promise<any> | null => {
  *
  * @return {object|undefined} Returns either the response, or throws an error
  */
-const checkStatus = (response: Response) => {
+const checkStatus = (response: IResponse) => {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
