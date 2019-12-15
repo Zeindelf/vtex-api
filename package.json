@@ -1,6 +1,6 @@
 {
   "name": "vtex-api",
-  "version": "0.2.0-canary.0",
+  "version": "0.2.0-canary.1",
   "description": "A collection of VTEX APIs methods",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -21,7 +21,8 @@
     "lint": "yarn lint:js",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
