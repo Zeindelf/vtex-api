@@ -1,6 +1,6 @@
 import stringify from './stringify';
 
-describe('validate stringify', () => {
+describe('stringify()', () => {
   it('should parse an object { key: value } to URL query string', () => {
     expect.assertions(1);
     expect(stringify({ foo: 'bar', baz: 'qux', corge: '' })).toStrictEqual('foo=bar&baz=qux&corge=');

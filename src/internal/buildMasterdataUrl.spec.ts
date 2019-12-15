@@ -1,4 +1,4 @@
-describe('build masterdata url', () => {
+describe('buildMasterdataUrl()', () => {
   it('sould pass', () => {
     expect.assertions(1);
     expect(1).toStrictEqual(1);

@@ -2,7 +2,7 @@ import 'whatwg-fetch';
 
 import request from './request';
 
-describe('request', () => {
+describe('request()', () => {
   describe('stubbing successful response', () => {
     beforeEach(() => {
       const res = new Response('{"hello":"world"}', {

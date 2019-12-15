@@ -1,6 +1,6 @@
 import isObject from './isObject';
 
-describe('validate if is object', () => {
+describe('isObject()', () => {
   it('should validate an object', () => {
     expect.assertions(1);
     expect(isObject({ foo: 'Foo' })).toBe(true);

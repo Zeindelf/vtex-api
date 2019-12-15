@@ -1,6 +1,6 @@
 import assign from './assign';
 
-describe('merge objects with assign', () => {
+describe('assign()', () => {
   it('should merge 2 objects', () => {
     expect.assertions(1);
     expect(assign({ a: 'A' }, { b: 'B' })).toStrictEqual({ a: 'A', b: 'B' });

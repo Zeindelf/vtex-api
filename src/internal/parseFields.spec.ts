@@ -1,6 +1,6 @@
 import parseFields from './parseFields';
 
-describe('parse params fields', () => {
+describe('parseFields()', () => {
   it('should validate filters with params', () => {
     expect.assertions(1);
     expect(parseFields(['foo'])).toBe('foo,id');

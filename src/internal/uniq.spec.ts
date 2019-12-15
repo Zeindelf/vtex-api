@@ -1,6 +1,6 @@
 import uniq from './uniq';
 
-describe('uniq values on a array', () => {
+describe('uniq()', () => {
   it('should be a uniq number values array', () => {
     expect.assertions(1);
     expect(uniq([1, 2, 2, 3, 4, 4])).toStrictEqual([1, 2, 3, 4]);

@@ -1,6 +1,6 @@
 import head from './head';
 
-describe('head method: get first item from an array', () => {
+describe('head()', () => {
   it('should return first item from array', () => {
     expect.assertions(1);
     expect(head([1, 2, 3])).toBe(1);

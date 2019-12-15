@@ -1,6 +1,6 @@
 import isEmail from './isEmail';
 
-describe('valida an email', () => {
+describe('isEmail()', () => {
   it('should validate an email', () => {
     expect.assertions(1);
     expect(isEmail('foo@bar.com')).toBe(true);

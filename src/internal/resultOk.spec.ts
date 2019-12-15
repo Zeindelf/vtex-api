@@ -1,6 +1,6 @@
 import resultOk from './resultOk';
 
-describe('check if result ok', () => {
+describe('resultOk()', () => {
   it('should validate an api response', () => {
     expect.assertions(1);
     expect(resultOk([{ id: '1' }])).toBe(true);
