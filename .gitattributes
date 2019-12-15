@@ -225,3 +225,7 @@ Procfile          text
 *.PDF             diff=astextplain
 *.rtf             diff=astextplain
 *.RTF             diff=astextplain
+
+# Language
+*.js linguist-language=Typescript
+*.ts linguist-language=Typescript
