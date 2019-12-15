@@ -15,7 +15,7 @@ import call from './call';
 const get = (id: string | number, fields: [], entity: string): Promise<any> => {
   const params = parseFileds(fields);
 
-  return call('get', id, params, entity, 'documents', null);
+  return call('get', id, params, entity, 'documents');
 };
 
 export default get;

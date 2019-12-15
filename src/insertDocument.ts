@@ -9,7 +9,7 @@ import call from './services/call';
  * @return {promise}
  */
 const insertDocument = (data: {}, entity: string): Promise<any> => (
-  call('POST', null, data, entity, 'documents', null)
+  call('POST', null, data, entity, 'documents')
 );
 
 export default insertDocument;

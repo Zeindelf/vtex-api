@@ -33,7 +33,7 @@ const searchDocument = (
   offset = 0,
   filters: Filters | null,
 ): Promise<any> => {
-  const headers = { 'REST-Range': `resources=${offset}-${limit + offset}` };
+  const headers = [`REST-Range: resources=${offset}-${limit + offset}`];
 
   const mergedParams = Object.assign(params, filters, {
     _fields: parseFileds(fields),

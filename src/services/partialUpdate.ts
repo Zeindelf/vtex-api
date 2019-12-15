@@ -10,7 +10,7 @@ import call from './call';
  * @return {promise}
  */
 const partialUpdate = (id: string | number, data: {}, entity: string): Promise<any> => (
-  call('PATCH', id, data, entity, 'documents', null)
+  call('PATCH', id, data, entity, 'documents')
 );
 
 export default partialUpdate;
