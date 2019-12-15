@@ -12,6 +12,7 @@
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "commit": "git-cz",
     "clear": "rimraf lib esm",
     "build:cjs": "tsc -d",
     "build:es": "tsc -m esNext --outDir esm",
@@ -46,6 +47,8 @@
     "@types/jest": "^24.0.23",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.7.2",
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-plugin-import": "^2.19.1",
@@ -58,6 +61,11 @@
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3",
     "whatwg-fetch": "^3.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "engines": {
     "node": ">=10.17.0",
