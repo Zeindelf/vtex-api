@@ -1,6 +1,6 @@
-import parseHeaders from './parseHeaders';
+import createHeaders from './createHeaders';
 
-describe('parseHeaders()', () => {
+describe('createHeaders()', () => {
   it('array[string] to headers { key: value }', () => {
     expect.assertions(1);
 
@@ -14,7 +14,7 @@ describe('parseHeaders()', () => {
       Cookie: '9b88ad8ab86f44e49f69462592c33289',
     };
 
-    expect(parseHeaders(input)).toStrictEqual(output);
+    expect(createHeaders(input)).toStrictEqual(output);
   });
 
   it('duplicate array[string] to headers { key: value[] }', () => {
@@ -33,6 +33,6 @@ describe('parseHeaders()', () => {
       'X-Custom-Header': ['11g27iz-0', 'zmrhcc-1'],
     };
 
-    expect(parseHeaders(input)).toStrictEqual(output);
+    expect(createHeaders(input)).toStrictEqual(output);
   });
 });

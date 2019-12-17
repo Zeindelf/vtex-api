@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 
 import stringify from '../internal/stringify';
-import parseHeaders from '../internal/parseHeaders';
+import parseHeaders from '../internal/createHeaders';
 import request from '../request';
 
 const call = (
