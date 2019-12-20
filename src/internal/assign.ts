@@ -1,9 +1,4 @@
 /* eslint-disable no-param-reassign */
-
-type Obj = {
-  [key: string]: any;
-};
-
 /**
  * Analogue of Object.assign()
  *
@@ -12,7 +7,7 @@ type Obj = {
  *
  * @return {Object}         The updated target object.
  */
-const assign = (target: Obj, ...args: Obj[]) => {
+const assign = (target: IObj, ...args: IObj[]) => {
   for (let i = 0, totalArgs = args.length; i < totalArgs; i += 1) {
     const source = args[i];
     const keys = Object.keys(source);

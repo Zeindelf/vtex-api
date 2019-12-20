@@ -5,7 +5,7 @@ const callAttachment = (
   data: FormData,
   entity: string,
   field: string,
-): Promise<any> => {
+): Promise<IResponse> => {
   const url = `/api/dataentities/${entity}/documents/${id}/${field}/attachments`;
   const headers = new Headers({ Accept: 'application/vnd.vtex.ds.v10+json' });
 

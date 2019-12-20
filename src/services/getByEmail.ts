@@ -10,7 +10,7 @@ import searchDocument from '../searchDocument';
  *
  * @return {promise}
  */
-const getByEmail = (email: string): Promise<any> => {
+const getByEmail = (email: string): Promise<IResponse> => {
   if (!isEmail(email)) {
     return Promise.reject(new Error('Invalid email'));
   }

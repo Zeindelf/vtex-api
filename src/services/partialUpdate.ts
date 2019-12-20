@@ -9,7 +9,7 @@ import call from './call';
  *
  * @return {promise}
  */
-const partialUpdate = (id: string | number, data: {}, entity: string): Promise<any> => (
+const partialUpdate = (id: string | number, data: {}, entity: string): Promise<IResponse> => (
   call('PATCH', id, data, entity, 'documents')
 );
 

@@ -3,16 +3,6 @@ import parseFileds from './internal/parseFields';
 
 import call from './services/call';
 
-type Filters = {
-  _where?: string;
-  _keyword?: string;
-  _sort?: string;
-};
-
-type Params = {
-  [key: string]: any;
-};
-
 /**
  * Performs a single search
  *
@@ -26,13 +16,13 @@ type Params = {
  * @return {promise}
  */
 const searchDocument = (
-  params: Params,
+  params: IObj,
   fields: any[],
   entity: string,
   limit = 49,
   offset = 0,
-  filters: Filters | null,
-): Promise<any> => {
+  filters: IFilters | null,
+): Promise<IResponse> => {
   const headers = [`REST-Range: resources=${offset}-${limit + offset}`];
 
   const mergedParams = Object.assign(params, filters, {

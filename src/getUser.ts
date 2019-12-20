@@ -12,11 +12,11 @@ import get from './services/get';
  *
  * @return {promise}
  */
-const getUser = async (email: string, fields: []): Promise<any> => {
-  const result = await getByEmail(email);
+const getUser = async (email: string, fields: []): Promise<IResponse> => {
+  const { json } = await getByEmail(email);
 
-  return resultOk(result)
-    ? get(head(result).id, fields, 'CL')
+  return resultOk(json)
+    ? get(head(json).id, fields, 'CL')
     : Promise.reject(new Error('User doesn\'t exist'));
 };
 

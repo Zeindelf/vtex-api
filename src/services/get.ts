@@ -12,7 +12,7 @@ import call from './call';
  *
  * @return {promise}
  */
-const get = (id: string | number, fields: [], entity: string): Promise<any> => {
+const get = (id: string | number, fields: [], entity: string): Promise<IResponse> => {
   const params = parseFileds(fields);
 
   return call('get', id, params, entity, 'documents');

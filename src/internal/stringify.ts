@@ -1,9 +1,4 @@
 /* eslint-disable no-restricted-globals */
-
-type Obj = {
-  [key: string]: any;
-};
-
 const stringifyPrimitive = (v: any) => {
   switch (typeof v) {
     case 'string':
@@ -20,7 +15,7 @@ const stringifyPrimitive = (v: any) => {
   }
 };
 
-const stringify = (obj: Obj, sep = '&', eq = '=', name = '') => {
+const stringify = (obj: IObj, sep = '&', eq = '=', name = '') => {
   if (typeof obj === 'object') {
     return Object.keys(obj).map((k) => {
       const ks = encodeURIComponent(stringifyPrimitive(k)) + eq;

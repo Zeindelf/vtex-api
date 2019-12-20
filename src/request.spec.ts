@@ -19,7 +19,7 @@ describe('request()', () => {
       expect.assertions(1);
 
       try {
-        const { hello } = await request('/success-url');
+        const { json: { hello } } = await request('/success-url');
 
         expect(hello).toBe('world');
       } finally { /** */ }
@@ -40,8 +40,8 @@ describe('request()', () => {
       expect.assertions(1);
 
       try {
-        const response = await request('/success-url');
-        expect(response).toBeNull();
+        const { json } = await request('/success-url');
+        expect(json).toBeNull();
       } finally { /** */ }
     });
   });

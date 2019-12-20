@@ -14,11 +14,11 @@ import insertDocument from './insertDocument';
  *
  * @return {promise}
  */
-const updateUser = async (email: string, data: {}): Promise<any> => {
-  const result = await getByEmail(email);
+const updateUser = async (email: string, data: {}): Promise<IResponse> => {
+  const { json } = await getByEmail(email);
 
-  return resultOk(result)
-    ? partialUpdate(head(result).id, data, 'CL')
+  return resultOk(json)
+    ? partialUpdate(head(json).id, data, 'CL')
     : insertDocument({ email, ...data }, 'CL');
 };
 

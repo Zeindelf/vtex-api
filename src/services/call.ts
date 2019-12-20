@@ -1,5 +1,4 @@
 /* eslint-disable no-restricted-syntax */
-
 import stringify from '../internal/stringify';
 import parseHeaders from '../internal/createHeaders';
 import request from '../request';
@@ -11,7 +10,7 @@ const call = (
   entity: string,
   type: string,
   headers: string[] = [],
-): Promise<any> => {
+): Promise<IResponse> => {
   const mountedUrl = `/api/dataentities/${entity || 'CL'}/${type || 'search'}/${id || ''}`;
   const url = method === 'GET' ? `${mountedUrl}?${stringify(data)}` : mountedUrl;
 

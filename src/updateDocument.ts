@@ -9,7 +9,7 @@ import partialUpdate from './services/partialUpdate';
  *
  * @return {promise}
  */
-const updateDocument = (id: string | number, data: {}, entity: string): Promise<any> => (
+const updateDocument = (id: string | number, data: {}, entity: string): Promise<IResponse> => (
   partialUpdate(id, data, entity)
 );
 

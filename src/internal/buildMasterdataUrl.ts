@@ -1,13 +1,5 @@
 import stringify from './stringify';
 
-interface IMasterdataParams {
-  method: string;
-  entity: string;
-  type: string;
-  id?: string;
-  data?: {};
-}
-
 const buildMasterdataUrl = ({
   entity,
   type,

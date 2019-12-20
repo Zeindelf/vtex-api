@@ -11,7 +11,11 @@ import updateUser from './updateUser';
  *
  * @return {promise}
  */
-const newsletterOptIn = (email: string, isNewsletterOptIn = true, data = {}): Promise<any> => {
+const newsletterOptIn = (
+  email: string,
+  isNewsletterOptIn = true,
+  data = {},
+): Promise<IResponse> => {
   const obj = assign({ isNewsletterOptIn }, data);
   return updateUser(email, obj);
 };

@@ -8,7 +8,7 @@ import call from './services/call';
  *
  * @return {promise}
  */
-const insertDocument = (data: {}, entity: string): Promise<any> => (
+const insertDocument = (data: {}, entity: string): Promise<IResponse> => (
   call('POST', null, data, entity, 'documents')
 );
 

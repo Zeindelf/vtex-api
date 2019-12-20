@@ -15,7 +15,7 @@ const uploadFile = (
   entity: string,
   field: string,
   file: File,
-): Promise<any> => {
+): Promise<IResponse> => {
   const form = new FormData();
   form.append('Filename', file.name);
   form.append('Filedata', file);

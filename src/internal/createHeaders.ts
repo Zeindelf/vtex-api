@@ -1,13 +1,9 @@
 import trim from './trim';
 
-interface IObject {
-  [key: string]: any
-}
-
 const createHeaders = (headers: string[]) => {
   if (!headers) return {};
 
-  const result: IObject = {};
+  const result: IObj = {};
 
   for (let i = 0, len = headers.length; i < len; i += 1) {
     const row = headers[i];

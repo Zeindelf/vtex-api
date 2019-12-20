@@ -1,11 +1,3 @@
-interface IResponse {
-  status: number,
-  statusText: string;
-  json(): Promise<any>;
-  json<T>(): Promise<T>;
-  text(): Promise<string>;
-}
-
 /**
  * Parses the JSON returned by a network request
  *
@@ -13,10 +5,15 @@ interface IResponse {
  *
  * @return {object}          The parsed JSON from the request
  */
-const parseJSON = (response: IResponse): Promise<any> | null => {
-  const { status } = response;
+const parseJSON = async (response: IResponse): Promise<IResponse> => {
+  const { status, headers } = response;
 
-  return status === 204 || status === 205 ? null : response.json();
+  if (status === 204 || status === 205) {
+    return { status, headers, json: null };
+  }
+
+  const json = await response.json();
+  return { status, headers, json };
 };
 
 /**
@@ -26,7 +23,7 @@ const parseJSON = (response: IResponse): Promise<any> | null => {
  *
  * @return {object|undefined} Returns either the response, or throws an error
  */
-const checkStatus = (response: IResponse) => {
+const checkStatus = (response: IResponse): IResponse => {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
@@ -45,7 +42,7 @@ const checkStatus = (response: IResponse) => {
  *
  * @return {object}           The response data
  */
-const request = (url: string, options?: {}): Promise<any> => fetch(url, options)
+const request = (url: string, options?: {}): Promise<IResponse> => fetch(url, options)
   .then(checkStatus)
   .then(parseJSON);
 
