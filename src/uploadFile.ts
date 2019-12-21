@@ -10,17 +10,16 @@ import callAttachment from './services/callAttachment';
  *
  * @return {promise}
  */
-const uploadFile = (
-  id: string | number,
-  entity: string,
-  field: string,
-  file: File,
-): Promise<IResponse> => {
-  const form = new FormData();
-  form.append('Filename', file.name);
-  form.append('Filedata', file);
+const uploadFile = ({
+  id, entity, file, field,
+}: IUploadFile): Promise<IResponse> => {
+  const formData = new FormData();
+  formData.append('Filename', file.name);
+  formData.append('Filedata', file);
 
-  return callAttachment(id, form, entity, field);
+  return callAttachment({
+    id, entity, formData, field,
+  });
 };
 
 export default uploadFile;

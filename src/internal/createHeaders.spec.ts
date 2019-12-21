@@ -23,14 +23,14 @@ describe('createHeaders()', () => {
     const input = [
       'Content-Type: application/json; charset=utf-8',
       'Cookie: 9b88ad8ab86f44e49f69462592c33289',
-      'X-Custom-Header: 11g27iz-0',
-      'X-Custom-Header: zmrhcc-1',
+      'X-Custom-Header: 11g27iz0',
+      'X-Custom-Header: zmrhcc1',
     ];
 
     const output = {
       'Content-Type': 'application/json; charset=utf-8',
       Cookie: '9b88ad8ab86f44e49f69462592c33289',
-      'X-Custom-Header': ['11g27iz-0', 'zmrhcc-1'],
+      'X-Custom-Header': ['11g27iz0', 'zmrhcc1'],
     };
 
     expect(createHeaders(input)).toStrictEqual(output);

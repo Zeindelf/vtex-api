@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import stringify from '../internal/stringify';
-import parseHeaders from '../internal/createHeaders';
+import createHeaders from '../internal/createHeaders';
 import request from '../request';
 
 const call = (
@@ -17,7 +17,7 @@ const call = (
   const config = {
     method,
     body: method !== 'GET' ? JSON.stringify(data) : null,
-    headers: new Headers(parseHeaders([
+    headers: new Headers(createHeaders([
       'Accept: application/vnd.vtex.ds.v10+json',
       'Content-Type: application/json; charset=utf-8',
       ...headers,
