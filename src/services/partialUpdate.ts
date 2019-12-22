@@ -1,4 +1,4 @@
-import call from './call';
+import masterdataRequest from './masterdataRequest';
 
 /**
  * Partial update of a document
@@ -10,7 +10,7 @@ import call from './call';
  * @return {promise}
  */
 const partialUpdate = (id: string | number, data: {}, entity: string): Promise<IResponse> => (
-  call('PATCH', id, data, entity, 'documents')
+  masterdataRequest('PATCH', id, data, entity, 'documents')
 );
 
 export default partialUpdate;

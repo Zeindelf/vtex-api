@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign, no-underscore-dangle */
 import parseFileds from './internal/parseFields';
 
-import call from './services/call';
+import masterdataRequest from './services/masterdataRequest';
 
 /**
  * Performs a single search
@@ -29,7 +29,7 @@ const searchDocument = (
     _fields: parseFileds(fields),
   });
 
-  return call('GET', null, mergedParams, entity, 'search', headers);
+  return masterdataRequest('GET', null, mergedParams, entity, 'search', headers);
 };
 
 export default searchDocument;

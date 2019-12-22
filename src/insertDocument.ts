@@ -1,4 +1,4 @@
-import call from './services/call';
+import masterdataRequest from './services/masterdataRequest';
 
 /**
  * Insert a document
@@ -9,7 +9,7 @@ import call from './services/call';
  * @return {promise}
  */
 const insertDocument = (data: {}, entity: string): Promise<IResponse> => (
-  call('POST', null, data, entity, 'documents')
+  masterdataRequest('POST', null, data, entity, 'documents')
 );
 
 export default insertDocument;

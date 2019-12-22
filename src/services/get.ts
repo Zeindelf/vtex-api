@@ -1,6 +1,6 @@
 import parseFileds from '../internal/parseFields';
 
-import call from './call';
+import masterdataRequest from './masterdataRequest';
 
 /**
  * Get a master data document
@@ -15,7 +15,7 @@ import call from './call';
 const get = (id: string | number, fields: [], entity: string): Promise<IResponse> => {
   const params = parseFileds(fields);
 
-  return call('get', id, params, entity, 'documents');
+  return masterdataRequest('get', id, params, entity, 'documents');
 };
 
 export default get;

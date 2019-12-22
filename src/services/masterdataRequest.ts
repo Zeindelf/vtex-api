@@ -3,7 +3,7 @@ import stringify from '../internal/stringify';
 import createHeaders from '../internal/createHeaders';
 import request from '../request';
 
-const call = (
+const masterdataRequest = (
   method: string,
   id: string | number | null,
   data: {},
@@ -27,4 +27,4 @@ const call = (
   return request(url, config);
 };
 
-export default call;
+export default masterdataRequest;
