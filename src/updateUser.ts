@@ -1,25 +1,42 @@
-import head from './internal/head';
+import head from './utils/head';
 import resultOk from './internal/resultOk';
 
-import getByEmail from './services/getByEmail';
 import partialUpdate from './services/partialUpdate';
-
+import getUser from './getUser';
 import insertDocument from './insertDocument';
 
 /**
  * Update a user if the email exists, or insert a new one if it doesn't
  *
  * @param {string} email The email of the user
- * @param {object} data  The data that will be updated.
+ * @param {object} data  The data that will be updated
+ *
+ * @module masterdata
+ *
+ * @example
+ *  const response = await updateUser({
+ *    email: 'john@doe.com',
+ *    data: {
+ *      firstName: 'John',
+ *      lastName: 'Doe',
+ *      ...
+ *    },
+ *  });
  *
  * @return {promise}
  */
-const updateUser = async (email: string, data: {}): Promise<IResponse> => {
-  const { json } = await getByEmail(email);
+const updateUser = async ({
+  email, data, auth, accountName,
+}: IUpdateUser): Promise<IResponse> => {
+  const { json } = await getUser({ email, fields: ['id'] });
 
   return resultOk(json)
-    ? partialUpdate(head(json).id, data, 'CL')
-    : insertDocument({ email, ...data }, 'CL');
+    ? partialUpdate({
+      id: head(json).id, data, entity: 'CL', auth, accountName,
+    })
+    : insertDocument({
+      data: { email, ...data }, entity: 'CL', auth, accountName,
+    });
 };
 
 export default updateUser;

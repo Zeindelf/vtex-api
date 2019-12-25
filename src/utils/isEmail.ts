@@ -4,6 +4,8 @@
  * @category Validate
  * @param {string} email - The string to check
  *
+ * @module utils
+ *
  * @return {boolean}
  */
 const isEmail = (email: string): boolean => {

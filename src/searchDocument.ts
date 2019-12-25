@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign, no-underscore-dangle */
 import parseFileds from './internal/parseFields';
 
 import masterdataRequest from './services/masterdataRequest';
@@ -6,30 +5,52 @@ import masterdataRequest from './services/masterdataRequest';
 /**
  * Performs a single search
  *
- * @param {object} params         The search parameters
+ * @param {object} search         The search parameters
+ * @param {string} entity         The entity where the search will be performed
  * @param {array} fields          The Fields that will be retrieved
- * @param {string} [entity='CL']  The entity where the search will be performed
- * @param {number} [limit=49]     The search limit
- * @param {number} [offset=0]     The search offset
  * @param {object} [filters=null] The filters params. Accept: _where, _keyword and _sort
+ * @param {number} [offset=0]     The search offset
+ * @param {number} [limit=49]     The search limit
+ *
+ * @module masterdata
+ *
+ * @example
+ *  const response = await searchDocument({
+ *    search: {
+ *      email: 'foo@email.com',
+ *      ...
+ *    },
+ *    entity: 'CL',
+ *    fields: ['_all'],
+ *    filters: {
+ *      _sort: 'email ASC',
+ *      _where: 'firstName is null',
+ *      _keyword: '*',
+ *    },
+ *  });
  *
  * @return {promise}
  */
-const searchDocument = (
-  params: IObj,
-  fields: any[],
-  entity: string,
-  limit = 49,
-  offset = 0,
-  filters: IFilters | null,
-): Promise<IResponse> => {
+const searchDocument = ({
+  search, entity, fields, filters, offset = 0, limit = 49, auth, accountName,
+}: ISearchDocument): Promise<IResponse> => {
   const headers = [`REST-Range: resources=${offset}-${limit + offset}`];
 
-  const mergedParams = Object.assign(params, filters, {
+  const params = {
+    ...search,
+    ...filters,
     _fields: parseFileds(fields),
-  });
+  };
 
-  return masterdataRequest('GET', null, mergedParams, entity, 'search', headers);
+  return masterdataRequest({
+    entity,
+    type: 'search',
+    method: 'GET',
+    data: params,
+    headers,
+    auth,
+    accountName,
+  });
 };
 
 export default searchDocument;

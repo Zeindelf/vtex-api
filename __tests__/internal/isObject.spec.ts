@@ -1,4 +1,4 @@
-import isObject from './isObject';
+import isObject from '../../src/utils/isObject';
 
 describe('isObject()', () => {
   it('should validate an object', () => {

@@ -1,12 +1,13 @@
 import 'whatwg-fetch';
 
-import request from './request';
+import request from '../src/request';
 
 describe('request()', () => {
   describe('stubbing successful response', () => {
     beforeEach(() => {
       const res = new Response('{"hello":"world"}', {
         status: 200,
+        statusText: 'OK',
         headers: {
           'Content-type': 'application/json',
         },
@@ -16,12 +17,14 @@ describe('request()', () => {
     });
 
     it('should format the response correctly', async () => {
-      expect.assertions(1);
+      expect.assertions(3);
 
       try {
-        const { json: { hello } } = await request('/success-url');
+        const { json, status, statusText } = await request('/success-url');
 
-        expect(hello).toBe('world');
+        expect(json.hello).toBe('world');
+        expect(status).toBe(200);
+        expect(statusText).toBe('OK');
       } finally { /** */ }
     });
   });
@@ -37,11 +40,13 @@ describe('request()', () => {
     });
 
     it('should return null on 204 response', async () => {
-      expect.assertions(1);
+      expect.assertions(3);
 
       try {
-        const { json } = await request('/success-url');
+        const { json, status, statusText } = await request('/success-url');
         expect(json).toBeNull();
+        expect(status).toBe(204);
+        expect(statusText).toBe('No Content');
       } finally { /** */ }
     });
   });

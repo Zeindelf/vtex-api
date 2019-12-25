@@ -1,5 +1,8 @@
-import uniq from './uniq';
+import uniq from '../utils/uniq';
 
+/**
+ * @module masterdata
+ */
 const parseFileds = (fields: any): string => {
   if (!Array.isArray(fields) || !fields.length) return 'id';
 

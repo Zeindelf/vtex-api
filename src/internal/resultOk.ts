@@ -1,9 +1,11 @@
-import head from './head';
+import head from '../utils/head';
 
 /**
  * Check if a result is valid
  *
  * @param {object} result The result that will be parsed
+ *
+ * @module masterdata
  *
  * @return {boolean}
  */

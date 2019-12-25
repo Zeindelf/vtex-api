@@ -3,17 +3,23 @@
  *
  * @param  {object} response A response from a network request
  *
+ * @module general
+ *
  * @return {object}          The parsed JSON from the request
  */
 const parseJSON = async (response: IResponse): Promise<IResponse> => {
-  const { status, headers } = response;
+  const { status, statusText, headers } = response;
 
   if (status === 204 || status === 205) {
-    return { status, headers, json: null };
+    return {
+      status, statusText, headers, json: null,
+    };
   }
 
   const json = await response.json();
-  return { status, headers, json };
+  return {
+    status, statusText, headers, json,
+  };
 };
 
 /**

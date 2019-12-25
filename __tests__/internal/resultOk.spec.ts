@@ -1,4 +1,4 @@
-import resultOk from './resultOk';
+import resultOk from '../../src/internal/resultOk';
 
 describe('resultOk()', () => {
   it('should validate an api response', () => {

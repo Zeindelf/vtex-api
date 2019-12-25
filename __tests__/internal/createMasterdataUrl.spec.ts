@@ -1,4 +1,4 @@
-import createMasterdataUrl from './createMasterdataUrl';
+import createMasterdataUrl from '../../src/internal/createMasterdataUrl';
 
 const baseParams = {
   method: 'GET',
@@ -46,9 +46,9 @@ describe('createMasterdataUrl()', () => {
   it('should return an search url with id', () => {
     expect.assertions(1);
 
-    const params = { ...baseParams, id: '2838a6db' };
+    const params = { ...baseParams, id: '123' };
     expect(createMasterdataUrl(params)).toBe(
-      '/api/dataentities/AA/search/2838a6db',
+      '/api/dataentities/AA/search/123',
     );
   });
 });

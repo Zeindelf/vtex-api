@@ -1,4 +1,4 @@
-import head from './head';
+import head from '../../src/utils/head';
 
 describe('head()', () => {
   it('should return first item from array', () => {

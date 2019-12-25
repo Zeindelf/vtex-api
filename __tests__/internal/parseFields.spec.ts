@@ -1,4 +1,4 @@
-import parseFields from './parseFields';
+import parseFields from '../../src/internal/parseFields';
 
 describe('parseFields()', () => {
   it('should validate filters with params', () => {

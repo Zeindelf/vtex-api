@@ -7,10 +7,33 @@ import masterdataRequest from './masterdataRequest';
  * @param {object} data   The data that will be updated
  * @param {string} entity The entity of the document to insert
  *
+ * @module masterdata
+ *
+ * @example
+ *  const response = await partialUpdate({
+ *    id: 'aa65fd51-0dab-11ea-82ee-9e3712d56bb3',
+ *    data: {
+ *      firstName: 'Edited',
+ *      lastName: 'Edited',
+ *      ...
+ *    },
+ *    entity: 'CL',
+ *  });
+ *
  * @return {promise}
  */
-const partialUpdate = (id: string | number, data: {}, entity: string): Promise<IResponse> => (
-  masterdataRequest('PATCH', id, data, entity, 'documents')
+const partialUpdate = ({
+  id, data, entity, auth, accountName,
+}: IPartialUpdate): Promise<IResponse> => (
+  masterdataRequest({
+    method: 'PATCH',
+    id,
+    data,
+    entity,
+    type: 'documents',
+    auth,
+    accountName,
+  })
 );
 
 export default partialUpdate;

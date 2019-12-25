@@ -1,4 +1,8 @@
 /* eslint-disable no-restricted-globals */
+
+/**
+ * @module utils
+ */
 const stringifyPrimitive = (v: any) => {
   switch (typeof v) {
     case 'string':

@@ -1,4 +1,4 @@
-import assign from './assign';
+import assign from '../../src/utils/assign';
 
 describe('assign()', () => {
   it('should merge 2 objects', () => {

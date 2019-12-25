@@ -1,4 +1,4 @@
-import trim from './trim';
+import trim from '../../src/utils/trim';
 
 describe('trim()', () => {
   it('trim multiple spaces', () => {

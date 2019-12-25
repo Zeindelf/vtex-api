@@ -1,4 +1,4 @@
-import uniq from './uniq';
+import uniq from '../../src/utils/uniq';
 
 describe('uniq()', () => {
   it('should be a uniq number values array', () => {

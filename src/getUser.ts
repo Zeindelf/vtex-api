@@ -1,23 +1,38 @@
-import resultOk from './internal/resultOk';
-import head from './internal/head';
+import isEmail from './utils/isEmail';
 
-import getByEmail from './services/getByEmail';
-import get from './services/get';
+import searchDocument from './searchDocument';
 
 /**
- * Get User by mail
+ * Performs a search by email
  *
- * @param {string} email - The email of the user
- * @param {array} [fields] - A list of fields to retrieve
+ * @param {string} email The email that will be searched
+ * @param {araay} fields The Fields that will be retrieved
+ *
+ * @module masterdata
+ *
+ * @example
+ *  const response = await getUser({
+ *    email: 'wellington.barreto@enext.com.br',
+ *    fields: ['email', 'firstName', 'lastName', ...],
+ *    ...
+ *  });
  *
  * @return {promise}
  */
-const getUser = async (email: string, fields: []): Promise<IResponse> => {
-  const { json } = await getByEmail(email);
+const getUser = ({
+  email, fields, auth, accountName,
+}: IGetUser): Promise<IResponse> => {
+  if (!isEmail(email)) return Promise.reject(new Error('Invalid email'));
 
-  return resultOk(json)
-    ? get(head(json).id, fields, 'CL')
-    : Promise.reject(new Error('User doesn\'t exist'));
+  return searchDocument({
+    search: { email },
+    fields,
+    entity: 'CL',
+    offset: 0,
+    limit: 1,
+    auth,
+    accountName,
+  });
 };
 
 export default getUser;

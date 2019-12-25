@@ -1,6 +1,9 @@
-import trim from './trim';
+import trim from '../utils/trim';
 
-const createHeaders = (headers: string[]) => {
+/**
+ * @module general
+ */
+const createHeaders = (headers?: string[]) => {
   if (!headers) return {};
 
   const result: IObj = {};

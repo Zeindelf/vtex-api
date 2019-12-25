@@ -5,6 +5,8 @@
  * @param  {Object} target  The target object to copy properties to.
  * @param  {Object} source  The source(s) to copy properties from.
  *
+ * @module utils
+ *
  * @return {Object}         The updated target object.
  */
 const assign = (target: IObj, ...args: IObj[]) => {

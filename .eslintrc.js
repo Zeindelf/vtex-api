@@ -29,6 +29,7 @@ module.exports =  {
   rules:  {
     'linebreak-style': 'off', // Avoid LF/CRLF on Win/Linux/Mac
     'import/no-unresolved': 'off',
+    'import/extensions': 'off',
     'jest/no-hooks': 'off',
   },
   globals: {

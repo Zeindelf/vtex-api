@@ -1,3 +1,6 @@
+/**
+ * @module general
+ */
 const hostname = (accountName?: string) => (
   accountName ? `https://${accountName}.vtexcommercestable.com.br` : ''
 );

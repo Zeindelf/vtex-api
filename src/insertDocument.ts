@@ -6,10 +6,32 @@ import masterdataRequest from './services/masterdataRequest';
  * @param {object} data - The data that will be inserted
  * @param {string} entity - The entity of the document to insert
  *
+ * @module masterdata
+ *
+ * @example
+ *  const response = await insertDocument({
+ *    data: {
+ *      firstName: 'Foo',
+ *      lastName: 'Bar',
+ *      email: 'foo@bar.com',
+ *      ...
+ *    },
+ *    entity: 'CL',
+ *  });
+ *
  * @return {promise}
  */
-const insertDocument = (data: {}, entity: string): Promise<IResponse> => (
-  masterdataRequest('POST', null, data, entity, 'documents')
+const insertDocument = ({
+  data, entity, auth, accountName,
+}: IInsertDeocument): Promise<IResponse> => (
+  masterdataRequest({
+    method: 'POST',
+    data,
+    entity,
+    type: 'documents',
+    auth,
+    accountName,
+  })
 );
 
 export default insertDocument;

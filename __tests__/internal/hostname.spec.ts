@@ -1,4 +1,4 @@
-import hostname from './hostname';
+import hostname from '../../src/internal/hostname';
 
 describe('hostname()', () => {
   it('should create host base url', () => {

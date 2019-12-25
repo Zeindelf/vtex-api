@@ -1,4 +1,4 @@
-import isEmail from './isEmail';
+import isEmail from '../../src/utils/isEmail';
 
 describe('isEmail()', () => {
   it('should validate an email', () => {

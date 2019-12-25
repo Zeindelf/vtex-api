@@ -21,8 +21,9 @@
     "lint": "yarn lint:js",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "test": "jest --verbose",
-    "prepublish": "yarn build"
+    "test": "jest",
+    "prepublish": "yarn build",
+    "start": "tsc -w -m esNext --outDir esm"
   },
   "repository": {
     "type": "git",
