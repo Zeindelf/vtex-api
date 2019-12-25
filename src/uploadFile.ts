@@ -5,21 +5,24 @@ import attachmentRequest from './services/attachmentRequest';
  *
  * @param {string} id     The ID of the document to insert
  * @param {string} entity The entity of the document to insert
- * @param {string} field  Document file field
+ * @param {string} field  Document file field name
  * @param {object} file   Parsed file
  *
  * @module masterdata
  *
  * @example
- *  const { json } = await md.insertDocument({
+ *  const { json } = await insertDocument({
  *    entity: 'CF',
- *    data: { email: 'johh@doe.com' },
+ *    data: {
+ *      email: 'johh@doe.com',
+ *      ...
+ *    },
  *  });
  *
- *  const response = await md.uploadFile({
+ *  const response = await uploadFile({
  *    id: json.DocumentId,
  *    entity: 'CF',
- *    file,
+ *    file: myFile,
  *    field: 'file',
  *  });
  *

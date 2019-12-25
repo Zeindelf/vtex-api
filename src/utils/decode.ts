@@ -1,9 +1,11 @@
 /* eslint-disable no-param-reassign */
-
 function hasOwnProperty(obj: IObj, prop: string) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
+/**
+ * @module utils
+ */
 const decode = (
   qs: string | string[],
   sep = '&',

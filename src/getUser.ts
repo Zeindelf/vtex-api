@@ -14,7 +14,6 @@ import searchDocument from './searchDocument';
  *  const response = await getUser({
  *    email: 'wellington.barreto@enext.com.br',
  *    fields: ['email', 'firstName', 'lastName', ...],
- *    ...
  *  });
  *
  * @return {promise}

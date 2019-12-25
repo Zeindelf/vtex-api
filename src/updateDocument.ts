@@ -10,7 +10,7 @@ import partialUpdate from './services/partialUpdate';
  * @module masterdata
  *
  * @example
- *  const response = await md.updateDocument({
+ *  const response = await updateDocument({
  *    id: 'aa65fd51-0dab-11ea-82ee-9e3712d56bb3',
  *    data: {
  *      firstName: 'Edited',

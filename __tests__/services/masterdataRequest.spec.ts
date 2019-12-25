@@ -22,15 +22,14 @@ describe('masterdataRequest()', () => {
   describe('stubbing successful response', () => {
     beforeEach(() => {
       function mockedResponse(...mockedOpts: any) {
-        const [url] = mockedOpts;
+        const [url, config] = mockedOpts;
         const [, params] = url.split('?');
         const matchedUser = users.find((user) => user.email === decode(params).email);
+
         const res = new Response(JSON.stringify(matchedUser), {
           status: 200,
           statusText: 'OK',
-          headers: {
-            'Content-type': 'application/json',
-          },
+          headers: config.headers,
         });
 
         return Promise.resolve(res);
@@ -43,7 +42,7 @@ describe('masterdataRequest()', () => {
       expect.assertions(3);
 
       const response = await masterdataRequest({
-        data: { email: 'jane@doe.com' },
+        data: { email: 'john@doe.com' },
         entity: 'CL',
         type: 'documents',
         method: 'GET',
@@ -51,7 +50,25 @@ describe('masterdataRequest()', () => {
 
       expect(response.status).toStrictEqual(200);
       expect(response.statusText).toStrictEqual('OK');
+      expect(response.json).toStrictEqual(users[0]);
+    });
+
+    it('should return user data with auth keys', async () => {
+      expect.assertions(5);
+
+      const response = await masterdataRequest({
+        data: { email: 'jane@doe.com' },
+        entity: 'CL',
+        type: 'documents',
+        method: 'GET',
+        auth: { appKey: '123', appToken: 'abc' },
+      });
+
+      expect(response.status).toStrictEqual(200);
+      expect(response.statusText).toStrictEqual('OK');
       expect(response.json).toStrictEqual(users[1]);
+      expect(response.headers.get('x-vtex-api-appKey')).toStrictEqual('123');
+      expect(response.headers.get('x-vtex-api-appToken')).toStrictEqual('abc');
     });
   });
 });

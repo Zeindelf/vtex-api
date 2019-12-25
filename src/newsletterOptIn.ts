@@ -10,7 +10,7 @@ import updateUser from './updateUser';
  * @module masterdata
  *
  * @example
- *  const response = await md.newsletterOptIn({
+ *  const response = await newsletterOptIn({
  *    email: 'john@doe.com',
  *    data: {
  *      firstName: 'John Doe',

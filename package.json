@@ -1,6 +1,6 @@
 {
   "name": "vtex-api",
-  "version": "0.2.1-canary.0",
+  "version": "0.3.0-canary.0",
   "description": "A collection of VTEX APIs methods",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -17,13 +17,13 @@
     "build:cjs": "tsc -d",
     "build:es": "tsc -m esNext --outDir esm",
     "build": "yarn clear && yarn build:cjs && yarn build:es",
+    "start": "tsc -w -m esNext --outDir esm",
     "lint:js": "eslint **/*{.js,.ts} --fix --color",
     "lint": "yarn lint:js",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test": "jest",
-    "prepublish": "yarn build",
-    "start": "tsc -w -m esNext --outDir esm"
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",

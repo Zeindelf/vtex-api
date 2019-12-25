@@ -12,11 +12,10 @@ import masterdataRequest from './services/masterdataRequest';
  * @module masterdata
  *
  * @example
- *  const response = await md.getDocument({
+ *  const response = await getDocument({
  *    id: 'aa65fd51-0dab-11ea-82ee-9e3712d56bb3',
  *    fields: ['_all'],
  *    entity: 'CL',
- *    ...
  *  });
  *
  * @return {promise}

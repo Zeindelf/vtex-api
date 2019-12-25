@@ -3,8 +3,6 @@
  *
  * @param  {object} response A response from a network request
  *
- * @module general
- *
  * @return {object}          The parsed JSON from the request
  */
 const parseJSON = async (response: IResponse): Promise<IResponse> => {
@@ -44,7 +42,9 @@ const checkStatus = (response: IResponse): IResponse => {
  * Requests a URL, returning a promise
  *
  * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
+ * @param  {object} [options] The options we want to pass to 'fetch'
+ *
+ * @module general
  *
  * @return {object}           The response data
  */
