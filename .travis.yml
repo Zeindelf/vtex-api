@@ -6,4 +6,4 @@ cache:
   directories:
     - node_modules
 script: yarn lint && yarn test
-after_success: npx codecov --token:9a4c66cd-ab82-4143-a08b-599459d39412
+after_success: npx codecov
