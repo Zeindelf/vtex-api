@@ -1,11 +1,12 @@
 # VTEX API
 
-An isomorphic collection of VTEX APIs methods
+An isomorphic and depency free collection of VTEX APIs methods
 
 [![NPM][npm-badge]][npm]
 [![Build Status][build-badge]][build]
-[![Code Coverage][coverage-badge]][coverage]
+[![Codecov][codecov-badge]][codecov]
 [![Bundle Size][bundle-size-badge]][bundle-size]
+[![David][deps-badge]][deps]
 [![MIT License][license-badge]][license]
 
 ## Table of Contents
@@ -84,11 +85,17 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [build]: https://travis-ci.org/zeindelf/vtex-api
 [build-badge]: https://img.shields.io/travis/zeindelf/vtex-api.svg?style=flat-square
 
+[codecov]: https://codecov.io/gh/Zeindelf/vtex-api
+[codecov-badge]: https://codecov.io/gh/Zeindelf/vtex-api/branch/master/graph/badge.svg
+
 [coverage]: https://codecov.io/github/schettino/vtex-api
 [coverage-badge]: https://img.shields.io/codecov/c/github/zeindelf/vtex-api.svg?style=flat-square
 
 [bundle-size]: https://bundlephobia.com/result?p=vtex-api@canary
 [bundle-size-badge]: https://badgen.net/bundlephobia/minzip/vtex-api@canary
+
+[deps]: https://github.com/Zeindelf/vtex-api
+[deps-badge]: https://david-dm.org/zeindelf/vtex-api.svg
 
 [license]: https://github.com/zeindelf/vtex-api/blob/master/LICENSE
 [license-badge]: https://img.shields.io/npm/l/vtex-api.svg?style=flat-square

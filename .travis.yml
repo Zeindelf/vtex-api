@@ -6,6 +6,5 @@ cache:
   directories:
     - node_modules
 scripts:
-  - npm install codecov -g
   - yarn lint && yarn test
 after_success: npx codecov
