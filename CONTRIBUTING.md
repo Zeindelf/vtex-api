@@ -22,9 +22,9 @@ If you contribute to this project, you agree to release your work under the lice
 
 You can also write your tests first if you prefer [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development).
 
-### Updating an existing hook
+### Updating an existing method
 
-1. Run `yarn start` to start the storybook development server and start applying changes
+1. Run `yarn start` to start TS watches and start applying changes
 2. Update tests according to your changes using `yarn test:watch`
 3. Update documentation according to your changes
 
@@ -32,7 +32,7 @@ You can also write your tests first if you prefer [test-driven development](http
 
 ### Commit messages
 
-This repo uses [semantic-release](https://github.com/semantic-release/semantic-release) and [conventional commit messages](https://conventionalcommits.org) so prefix your commits with `fix:` or `feat:` if you want your changes to appear in [release notes](https://github.com/streamich/react-use/blob/master/CHANGELOG.md).
+This repo uses [semantic-release](https://github.com/semantic-release/semantic-release) and [conventional commit messages](https://conventionalcommits.org) so prefix your commits with `fix:` or `feat:` if you want your changes to appear in [release notes](https://github.com/zeindelf/vtex-api/blob/master/CHANGELOG.md).
 
 ### Git hooks
 
@@ -41,6 +41,6 @@ when you install dependencies. These hooks automatically test and validate your 
 
 ## Help needed
 
-Please have a look at the [open issues](https://github.com/streamich/react-use/issues) and respond to questions, bug reports and feature requests. Thanks!
+Please have a look at the [open issues](https://github.com/zeindelf/vtex-api/issues) and respond to questions, bug reports and feature requests. Thanks!
 
 We're also looking to improve the code coverage on this project. To easily know what methods need tests run `yarn test:coverage` to generate a code coverage report. You can see the report in your terminal or open `coverage/lcov-report/index.html` to see the HTML report.
