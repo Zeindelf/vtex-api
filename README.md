@@ -1,13 +1,17 @@
-# VTEX API
-
-An isomorphic and depency free collection of VTEX APIs methods
+<div align="center">
+<h1>VTEX API</h1>
 
 [![NPM][npm-badge]][npm]
 [![Build Status][build-badge]][build]
 [![Codecov][codecov-badge]][codecov]
 [![Bundle Size][bundle-size-badge]][bundle-size]
 [![David][deps-badge]][deps]
+[![CodeFactor][codefactor-badge]][codefactor]
 [![MIT License][license-badge]][license]
+
+<p>An isomorphic and depency free collection of VTEX APIs methods</p>
+<hr />
+</div>
 
 ## Table of Contents
 
@@ -41,14 +45,18 @@ or use ES6 named import (tree shaking recommended)
 import { searchDocument } from 'vtex-api';
 ```
 
+### Old Browsers support
+
+If you need coverage old browsers, you need use an `fetch` polyfill, like [whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch) or [unfetch](https://www.npmjs.com/package/unfetch).
+
 ### Node
+For [NodeJS][node] usage, you will need some Isomorphic Fetch lib, like [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch) (and [isomorphic-form-data](https://www.npmjs.com/package/isomorphic-form-data) if you will use `uploadFile()` method)
 
-For node usage, you will need import [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch) (and [isomorphic-form-data](https://www.npmjs.com/package/isomorphic-form-data) if you will use `uploadFile()` method)
-
-For authentication, each method exposes keys for this purpose:
+For **authentication**, each method has keys for this purpose:
 
 ```js
-someMethod({
+const response = await searchDocument({
+  ...
   auth: { appKey: '123', appToken: 'abc' }, // Your private keys (use it ONLY on backend)
   accountName: 'storename', // Account name (will build full URL request)
 })
@@ -60,13 +68,7 @@ someMethod({
 
 Name | Description | Docs
 :--- | :--- | :---
-searchDocument | Query a collection of documents | [📝](./docs/searchDocument.md)
-
-## Built With
-
-* [TypeScript](https://www.typescriptlang.org/) - JavaScript that scales
-* [Jest](https://jestjs.io/) - Delightful JavaScript Testing
-* [`ts-jest`](https://kulshekhar.github.io/ts-jest) - Jest processor for TypeScript
+`searchDocument()` | Query a collection of documents | [📝](./docs/searchDocument.md)
 
 ## Contributing
 
@@ -88,14 +90,14 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [codecov]: https://codecov.io/gh/Zeindelf/vtex-api
 [codecov-badge]: https://codecov.io/gh/Zeindelf/vtex-api/branch/master/graph/badge.svg
 
-[coverage]: https://codecov.io/github/schettino/vtex-api
-[coverage-badge]: https://img.shields.io/codecov/c/github/zeindelf/vtex-api.svg?style=flat-square
-
 [bundle-size]: https://bundlephobia.com/result?p=vtex-api@canary
 [bundle-size-badge]: https://badgen.net/bundlephobia/minzip/vtex-api@canary
 
 [deps]: https://github.com/Zeindelf/vtex-api
 [deps-badge]: https://david-dm.org/zeindelf/vtex-api.svg
+
+[codefactor]: https://www.codefactor.io/repository/github/zeindelf/vtex-api
+[codefactor-badge]: https://www.codefactor.io/repository/github/zeindelf/vtex-api/badge
 
 [license]: https://github.com/zeindelf/vtex-api/blob/master/LICENSE
 [license-badge]: https://img.shields.io/npm/l/vtex-api.svg?style=flat-square
