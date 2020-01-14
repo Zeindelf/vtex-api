@@ -12,3 +12,7 @@ export { default as getUser } from './getUser';
 export { default as updateUser } from './updateUser';
 export { default as newsletterOptIn } from './newsletterOptIn';
 export { default as uploadFile } from './uploadFile';
+
+/** Product */
+export { default as notifyMe } from './notifyMe';
+export { default as simulateShipping } from './simulateShipping';
