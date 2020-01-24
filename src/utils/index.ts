@@ -1,0 +1,10 @@
+export { default as assign } from './assign';
+export { default as decode } from './decode';
+export { default as encode } from './encode';
+export { default as head } from './head';
+export { default as isEmail } from './isEmail';
+export { default as isObject } from './isObject';
+export { default as parse } from './parse';
+export { default as root } from './root';
+export { default as trim } from './trim';
+export { default as uniq } from './uniq';
