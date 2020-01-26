@@ -19,8 +19,8 @@ export { default as simulateShipping } from './simulateShipping';
 
 /** Helpers */
 export { default as fixProductSearchPrice } from './helpers/fixProductSearchPrice';
-export { default as getFirstAvailableSku } from './helpers/getFirstAvailableSku';
 export { default as formatPrice } from './helpers/formatPrice';
+export { default as getFirstAvailableSku } from './helpers/getFirstAvailableSku';
 export { default as getPercentage } from './helpers/getPercentage';
 export { default as getSkuInstallments } from './helpers/getSkuInstallments';
 export { default as getSkuPrice } from './helpers/getSkuPrice';
