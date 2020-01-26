@@ -1,10 +1,11 @@
-import objectSearch from '../utils/objectSearch';
-
-const getSkuSeller = (sku: IObj, sellerId: number | boolean = false): ISeller | IObj | boolean => {
+const getSkuSeller = (
+  sku: IProductItem, sellerId?: number | string,
+): ISeller => {
+  const { sellers } = sku;
   const seller = sellerId || true;
   const sellerKey = sellerId ? 'sellerId' : 'sellerDefault';
 
-  return objectSearch(sku, { [sellerKey]: seller });
+  return sellers.find((item: IObj) => item[sellerKey] === seller) as ISeller;
 };
 
 export default getSkuSeller;

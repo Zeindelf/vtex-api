@@ -1,7 +1,7 @@
-import parse from '../../src/utils/parse';
+import decode from '../../src/utils/decode';
 
-describe('parse()', () => {
-  it('should parse simple querystring', () => {
+describe('decode()', () => {
+  it('should decode simple querystring', () => {
     expect.assertions(1);
     const input = 'str=foo&arr=1&arr=2&arr=3&somenull=&undef=';
     const output = {
@@ -11,14 +11,14 @@ describe('parse()', () => {
       undef: '',
     };
 
-    expect(parse(input)).toStrictEqual(output);
+    expect(decode(input)).toStrictEqual(output);
   });
 
-  it('should parse an repeated key into array', () => {
+  it('should decode an repeated key into array', () => {
     expect.assertions(1);
     const input = 'foo=bar&foo=quux';
     const output = { foo: ['bar', 'quux'] };
 
-    expect(parse(input)).toStrictEqual(output);
+    expect(decode(input)).toStrictEqual(output);
   });
 });

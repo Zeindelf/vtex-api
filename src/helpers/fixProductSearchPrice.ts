@@ -5,6 +5,8 @@
  * @param  {number} val Value to convert
  * @return {integer}
  */
-const fixProductSearchPrice = (val: number): number => val && +val.toFixed(2).split('.').join('');
+const fixProductSearchPrice = (val: number): number => (
+  val && +val.toFixed(2).split('.').join('')
+);
 
 export default fixProductSearchPrice;

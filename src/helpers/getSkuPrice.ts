@@ -2,10 +2,8 @@ import getSkuSeller from './getSkuSeller';
 import getSkuInstallments from './getSkuInstallments';
 import fixProductSearchPrice from './fixProductSearchPrice';
 
-const getSkuPrice = (sku: IObj) => {
-  // TO-DO types
-  // @ts-ignore
-  const seller: ISeller = getSkuSeller(sku);
+const getSkuPrice = (sku: IProductItem, sellerId?: number | string) => {
+  const seller: ISeller = getSkuSeller(sku, sellerId);
   const { commertialOffer: co } = seller;
   const installments = getSkuInstallments(sku);
   const quantity = co.AvailableQuantity;
