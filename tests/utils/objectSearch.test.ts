@@ -1,4 +1,4 @@
-import { objectSearch } from '../../src/utils';
+import objectSearch from '../../src/utils/objectSearch';
 
 describe('objectSearch()', () => {
   const obj = [{

@@ -1,4 +1,4 @@
-import { pad } from '../../src/utils';
+import pad from '../../src/utils/pad';
 
 describe('pad()', () => {
   it('should add zero pad number for one digit', () => {

@@ -1,4 +1,4 @@
-import { formatPrice } from '../../src/helpers';
+import formatPrice from '../../src/helpers/formatPrice';
 
 describe('formatPrice()', () => {
   const USCurrency = {

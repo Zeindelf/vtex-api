@@ -1,4 +1,4 @@
-import { getPercentage } from '../../src/helpers';
+import getPercentage from '../../src/helpers/getPercentage';
 
 describe('getPercentage()', () => {
   it('should return false if list price less than best price', () => {

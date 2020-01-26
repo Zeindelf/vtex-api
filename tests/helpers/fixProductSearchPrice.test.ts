@@ -1,4 +1,4 @@
-import { fixProductSearchPrice } from '../../src/helpers';
+import fixProductSearchPrice from '../../src/helpers/fixProductSearchPrice';
 
 describe('fixProductSearchPrice()', () => {
   it('should convert integer price to correct format', () => {

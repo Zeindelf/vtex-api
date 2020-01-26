@@ -1,4 +1,4 @@
-import { getSkuPrice } from '../../src/helpers';
+import getSkuPrice from '../../src/helpers/getSkuPrice';
 import product from '../../mocks/product';
 
 describe('getSkuPrice()', () => {

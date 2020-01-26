@@ -1,4 +1,4 @@
-import { getSkuInstallments } from '../../src/helpers';
+import getSkuInstallments from '../../src/helpers/getSkuInstallments';
 import product from '../../mocks/product';
 
 describe('getSkuInstallments()', () => {

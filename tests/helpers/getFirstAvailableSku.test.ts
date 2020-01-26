@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { getFirstAvailableSku } from '../../src/helpers';
+import getFirstAvailableSku from '../../src/helpers/getFirstAvailableSku';
 import product from '../../mocks/product';
 
 describe('getFirstAvailableSku()', () => {

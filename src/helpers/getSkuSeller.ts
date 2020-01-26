@@ -1,4 +1,4 @@
-import { objectSearch } from '../utils';
+import objectSearch from '../utils/objectSearch';
 
 const getSkuSeller = (sku: IObj, sellerId: number | boolean = false): ISeller | IObj | boolean => {
   const seller = sellerId || true;
