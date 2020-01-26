@@ -2,13 +2,16 @@ import { getSkuSeller } from '../../src/helpers';
 import product from '../../mocks/product';
 
 describe('getSkuSeller()', () => {
-  it('should get seller info from an SKU', () => {
-    expect.assertions(2);
+  const { items: [, sku] } = product;
+  const { sellers: [seller] } = sku;
 
-    const { items: [, sku] } = product;
-    const { sellers: [seller] } = sku;
-
+  it('should get default seller info from an SKU', () => {
+    expect.assertions(1);
     expect(getSkuSeller(sku)).toStrictEqual(seller);
+  });
+
+  it('should get seller by ID info from an SKU', () => {
+    expect.assertions(1);
     expect(getSkuSeller(sku, 1)).toStrictEqual(seller);
   });
 });

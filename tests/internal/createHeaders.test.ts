@@ -1,15 +1,20 @@
 import createHeaders from '../../src/internal/createHeaders';
 
 describe('createHeaders()', () => {
+  it('should return an empty object if no param given', () => {
+    expect.assertions(1);
+    expect(createHeaders()).toStrictEqual({});
+  });
+
   it('array[string] to headers { key: value }', () => {
     expect.assertions(1);
 
-    const input = [
+    const input: string[] = [
       'Content-Type: application/json; charset=utf-8',
       'Cookie: 123',
     ];
 
-    const output = {
+    const output: {} = {
       'Content-Type': 'application/json; charset=utf-8',
       Cookie: '123',
     };
@@ -20,14 +25,14 @@ describe('createHeaders()', () => {
   it('duplicate array[string] to headers { key: value[] }', () => {
     expect.assertions(1);
 
-    const input = [
+    const input: string[] = [
       'Content-Type: application/json; charset=utf-8',
       'Cookie: 123',
       'X-Custom-Header: abc',
       'X-Custom-Header: def',
     ];
 
-    const output = {
+    const output: {} = {
       'Content-Type': 'application/json; charset=utf-8',
       Cookie: '123',
       'X-Custom-Header': ['abc', 'def'],
