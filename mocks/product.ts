@@ -1,12 +1,12 @@
 const product = {
-  productId: 2001269,
+  productId: '2001269',
   productName: 'CAFETEIRA EASYLINE',
   brand: 'Eletros',
   brandId: 2000000,
   brandImageUrl: null,
   linkText: 'cafeteira-easyline',
   productReference: 'CMB21',
-  categoryId: 1000299,
+  categoryId: '1000299',
   productTitle: 'Cafeteira Easyline | Eletros',
   metaTagDescription: 'Encontre os melhores eletrodomésticos para sua cozinha',
   releaseDate: '2016-08-25T00:00:00',
@@ -93,11 +93,11 @@ const product = {
   ],
   description: '<p style=text-align: justify;>D&ecirc; um toque de sabor ao seu dia com a<strong> Cafeteira Easyline CMB21</strong>. Com capacidade para servir 25 cafezinhos e design elegante, perfeita para voc&ecirc;!</p>',
   items: [{
-    itemId: 2001860,
+    itemId: '2001860',
     name: '127V',
     nameComplete: 'CAFETEIRA EASYLINE 127V',
     complementName: '',
-    ean: 7896347148481,
+    ean: '7896347148481',
     referenceId: [{
       Key: 'RefId',
       Value: '4910AABR483',
@@ -124,7 +124,7 @@ const product = {
     Voltagem: ['127V'],
     variations: ['Voltagem'],
     sellers: [{
-      sellerId: 1,
+      sellerId: '1',
       sellerName: 'shoponline',
       addToCartLink: 'https://storename.com.br/checkout/cart/add?sku=2001860&qty=1&seller=1&sc=1&price=8900&cv=af2aa38ed7f188cb787291a075f4d695_&sc=1',
       sellerDefault: true,
@@ -151,11 +151,11 @@ const product = {
     Videos: [],
     estimatedDateArrival: null,
   }, {
-    itemId: 2001861,
+    itemId: '2001861',
     name: '220V',
     nameComplete: 'CAFETEIRA EASYLINE 220V',
     complementName: '',
-    ean: 7896347148900,
+    ean: '7896347148900',
     referenceId: [{
       Key: 'RefId',
       Value: '4910AABR583',
@@ -165,14 +165,14 @@ const product = {
     modalType: null,
     isKit: false,
     images: [{
-      imageId: 185576,
+      imageId: '185576',
       imageLabel: null,
       imageTag: '<img src=~/arquivos/ids/185576-#width#-#height#/aprincipal.png?v=636561011912200000 width=#width# height=#height# alt=aprincipal id= />',
       imageUrl: 'https://storename.vteximg.com.br/arquivos/ids/185576/aprincipal.png?v=636561011912200000',
       imageText: 'aprincipal',
       imageLastModified: '2018-03-08T10:19:51.2200000Z',
     }, {
-      imageId: 185577,
+      imageId: '185577',
       imageLabel: null,
       imageTag: '<img src=~/arquivos/ids/185577-#width#-#height#/cafeteira-easyline-25-cafezinhos-CMB21-copo-02.jpg?v=636561018981670000 width=#width# height=#height# alt=cafeteira-easyline-25-cafezinhos-CMB21-copo-02 id= />',
       imageUrl: 'https://storename.vteximg.com.br/arquivos/ids/185577/cafeteira-easyline-25-cafezinhos-CMB21-copo-02.jpg?v=636561018981670000',
@@ -182,7 +182,7 @@ const product = {
     Voltagem: ['220V'],
     variations: ['Voltagem'],
     sellers: [{
-      sellerId: 1,
+      sellerId: '1',
       sellerName: 'shoponline',
       addToCartLink: 'https://storename.com.br/checkout/cart/add?sku=2001861&qty=1&seller=1&sc=1&price=8900&cv=af2aa38ed7f188cb787291a075f4d695_&sc=1',
       sellerDefault: true,
@@ -338,11 +338,11 @@ const product = {
       type: 'Radio',
     },
     values: [{
-      id: 379,
+      id: '379',
       name: '220V',
       position: 13,
     }, {
-      id: 385,
+      id: '385',
       name: '127V',
       position: 19,
     }],

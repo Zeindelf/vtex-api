@@ -5,12 +5,10 @@
  *
  * @return {object|boolean} An available SKU data or false
  */
-const getFirstAvailableSku = (items: IProductItem[]): IProductItem | boolean => {
-  if (!items) return false;
-
-  return items.find(({ sellers = [] }) => sellers.find(
+const getFirstAvailableSku = (items: IObj[] = []) => (
+  items.find(({ sellers = [] }) => sellers.find(
     ({ commertialOffer = {} }: IObj) => commertialOffer.AvailableQuantity > 0,
-  )) || false;
-};
+  ))
+);
 
 export default getFirstAvailableSku;

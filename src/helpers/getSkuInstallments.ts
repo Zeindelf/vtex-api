@@ -1,7 +1,7 @@
 import getSkuSeller from './getSkuSeller';
 
-const getSkuInstallments = (sku: IProductItem, sellerId?: number | string) => {
-  const { commertialOffer }: ISeller = getSkuSeller(sku, sellerId);
+const getSkuInstallments = (sku: IObj, sellerId?: number | string) => {
+  const { commertialOffer } = getSkuSeller(sku, sellerId);
   const { Installments } = commertialOffer;
 
   // Get by min price value

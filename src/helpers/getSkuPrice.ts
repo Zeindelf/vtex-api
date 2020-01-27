@@ -2,8 +2,8 @@ import getSkuSeller from './getSkuSeller';
 import getSkuInstallments from './getSkuInstallments';
 import fixProductSearchPrice from './fixProductSearchPrice';
 
-const getSkuPrice = (sku: IProductItem, sellerId?: number | string) => {
-  const seller: ISeller = getSkuSeller(sku, sellerId);
+const getSkuPrice = (sku: IObj, sellerId?: number | string) => {
+  const seller = getSkuSeller(sku, sellerId);
   const { commertialOffer: co } = seller;
   const installments = getSkuInstallments(sku);
   const quantity = co.AvailableQuantity;

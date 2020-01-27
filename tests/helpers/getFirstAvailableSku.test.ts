@@ -16,26 +16,26 @@ describe('getFirstAvailableSku()', () => {
 
   it('should return false with unavailable sku', () => {
     expect.assertions(1);
-    expect(getFirstAvailableSku([unavailable])).toStrictEqual(false);
+    expect(getFirstAvailableSku([unavailable])).toBeUndefined();
   });
 
   it('should return false to a empty param', () => {
     expect.assertions(1);
-    expect(getFirstAvailableSku()).toStrictEqual(false);
+    expect(getFirstAvailableSku()).toBeUndefined();
   });
 
   it('should return false with no seller found', () => {
     expect.assertions(1);
-    expect(getFirstAvailableSku(noSellers)).toStrictEqual(false);
+    expect(getFirstAvailableSku(noSellers)).toBeUndefined();
   });
 
   it('should return false with empty sellers', () => {
     expect.assertions(1);
-    expect(getFirstAvailableSku(emptySellers)).toStrictEqual(false);
+    expect(getFirstAvailableSku(emptySellers)).toBeUndefined();
   });
 
   it('should return false with empty commertial info', () => {
     expect.assertions(1);
-    expect(getFirstAvailableSku(emptyCommertialInfo)).toStrictEqual(false);
+    expect(getFirstAvailableSku(emptyCommertialInfo)).toBeUndefined();
   });
 });

@@ -13,7 +13,7 @@ describe('getSkuPrice()', () => {
     installmentsValue: undefined,
     listPrice: false,
     seller: 'shoponline',
-    sellerId: 1,
+    sellerId: '1',
   };
 
   const skuPriceAvailable = {
@@ -25,7 +25,7 @@ describe('getSkuPrice()', () => {
     installmentsValue: 4450,
     listPrice: 16990,
     seller: 'shoponline',
-    sellerId: 1,
+    sellerId: '1',
   };
 
   it('should return prince info for unavailable product', () => {

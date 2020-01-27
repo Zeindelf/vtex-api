@@ -12,6 +12,6 @@ describe('getSkuSeller()', () => {
 
   it('should get seller by ID info from an SKU', () => {
     expect.assertions(1);
-    expect(getSkuSeller(sku, 1)).toStrictEqual(seller);
+    expect(getSkuSeller(sku, '1')).toStrictEqual(seller);
   });
 });
