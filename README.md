@@ -70,6 +70,10 @@ Name | Description | Docs
 :--- | :--- | :---
 `searchDocument()` | Query a collection of documents | [📝](./docs/searchDocument.md)
 
+### Product
+
+### Helpers
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
