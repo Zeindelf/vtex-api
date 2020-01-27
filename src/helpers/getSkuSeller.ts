@@ -1,6 +1,6 @@
 const getSkuSeller = (
   sku: IProductItem, sellerId?: number | string,
-) => {
+): ISeller => {
   const { sellers } = sku;
   const seller = sellerId || true;
   const sellerKey = sellerId ? 'sellerId' : 'sellerDefault';

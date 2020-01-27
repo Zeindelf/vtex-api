@@ -54,12 +54,6 @@ interface IProductItem {
   Videos: string[]
   variations: string[]
   sellers: ISeller[]
-  attachments: {
-    id: number
-    name: string
-    required: boolean
-    domainValues: string
-  }[]
   isKit: boolean
 }
 
