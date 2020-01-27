@@ -94,8 +94,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [codecov]: https://codecov.io/gh/Zeindelf/vtex-api
 [codecov-badge]: https://codecov.io/gh/Zeindelf/vtex-api/branch/master/graph/badge.svg
 
-[bundle-size]: https://bundlephobia.com/result?p=vtex-api@canary
-[bundle-size-badge]: https://badgen.net/bundlephobia/minzip/vtex-api@canary
+[bundle-size]: https://bundlephobia.com/result?p=vtex-api
+[bundle-size-badge]: https://badgen.net/bundlephobia/minzip/vtex-api
 
 [deps]: https://github.com/Zeindelf/vtex-api
 [deps-badge]: https://david-dm.org/zeindelf/vtex-api.svg
