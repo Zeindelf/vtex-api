@@ -1,4 +1,5 @@
 /**
+ * @description
  * Get first available SKU from Vtex API `/api/catalog_system/` end point
  *
  * @param  {array}  product Product full data

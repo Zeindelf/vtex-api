@@ -6,15 +6,16 @@ type Format = {
 };
 
 /**
+ * @description
  * Formats Vtex price
  *
- * @param {integer} value           The number to format
- * @param {string}  [thousands='.']  The thousands delimiter
- * @param {string}  [decimals=',']   The decimal delimiter
- * @param {integer} [length=2]       The length of decimal
- * @param {string}  [currency='R$ '] Set currency
+ * @param {number} value            The number to format
+ * @param {string} [thousands='.']  The thousands delimiter
+ * @param {string} [decimals=',']   The decimal delimiter
+ * @param {number} [length=2]       The length of decimal
+ * @param {string} [currency='R$ '] Set currency
  *
- * @return {string} The formatted price
+ * @returns {string} The formatted price
  */
 const formatPrice = (value: number, {
   thousands = '.', decimals = ',', length = 2, currency = 'R$ ',

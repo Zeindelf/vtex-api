@@ -1,5 +1,10 @@
-/** General */
 export { default as request } from './request';
+export { default as requestTimeout } from './requestTimeout';
+
+/** General */
+export { default as pageType } from './pageType';
+export { default as searchAutocomplete } from './searchAutocomplete';
+export { default as searchProduct } from './searchProduct';
 
 /** Masterdata methods */
 export { default as masterdataRequest } from './services/masterdataRequest';
@@ -25,4 +30,6 @@ export { default as getPercentage } from './helpers/getPercentage';
 export { default as getSkuInstallments } from './helpers/getSkuInstallments';
 export { default as getSkuPrice } from './helpers/getSkuPrice';
 export { default as getSkuSeller } from './helpers/getSkuSeller';
+export { default as isSearchTerm } from './helpers/isSearchTerm';
+export { default as productPriceRange } from './helpers/productPriceRange';
 export { default as resizeImage } from './helpers/resizeImage';
