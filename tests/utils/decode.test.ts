@@ -21,4 +21,14 @@ describe('decode()', () => {
 
     expect(decode(input)).toStrictEqual(output);
   });
+
+  it('should return an empty obj with non/empty string param', () => {
+    expect.assertions(1);
+    expect(decode('')).toStrictEqual({});
+  });
+
+  it('should validate maxKeys', () => {
+    expect.assertions(1);
+    expect(decode('foo=bar&foz=baz&qux=wiz', '&', '=', { maxKeys: 2 })).toStrictEqual({ foo: 'bar', foz: 'baz' });
+  });
 });
