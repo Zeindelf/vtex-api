@@ -7,11 +7,12 @@ describe('isSearchTerm()', () => {
   });
 
   it('should return false for a invalid search term', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     expect(isSearchTerm('tv b&w')).toBe(false);
     expect(isSearchTerm('tv b=w')).toBe(false);
     expect(isSearchTerm('tv?stereo')).toBe(false);
     expect(isSearchTerm('[tv]')).toBe(false);
+    expect(isSearchTerm('%tv')).toBe(false);
   });
 });

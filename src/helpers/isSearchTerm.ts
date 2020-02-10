@@ -1,5 +1,5 @@
 const isSearchTerm = (searchTerm: string) => {
-  const regex = new RegExp(/[?&[\]=]/);
+  const regex = new RegExp(/[?&[\]=%]/);
 
   return !regex.test(searchTerm);
 };

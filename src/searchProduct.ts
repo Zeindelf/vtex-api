@@ -6,16 +6,13 @@ import trim from './utils/trim';
  */
 const searchProduct = ({
   searchTerm, orderBy, from, to, priceRange, headers, accountName, auth,
-}: ISearchProductParams): Promise<{
-  status: number, json: IProduct, headers: Headers
-}> => {
-  const query = (`
-    ft=${encodeURIComponent(trim(searchTerm))}
-    ${orderBy && `&O=${orderBy}`}
-    ${(from && from > -1) && `&_from=${from}`}
-    ${(to && to > -1) && `&_to=${to}`}
-    ${priceRange && `&fq=P:[${priceRange}]`}
-  `);
+}: ISearchProductParams): Promise<{ status: number, json: IProduct[] | [], headers: Headers }> => {
+  let query = (`ft=${encodeURIComponent(trim(searchTerm))}`);
+
+  if (orderBy) query += `&O=${orderBy}`;
+  if (from !== undefined && from > -1) query += `&_from=${from}`;
+  if (to !== undefined && to > -1) query += `&_to=${to}`;
+  if (priceRange) query += `&fq=P:[${priceRange}]`;
 
   return catalogRequest({
     path: '/products/search',

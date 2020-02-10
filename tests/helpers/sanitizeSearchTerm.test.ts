@@ -21,6 +21,11 @@ describe('sanitizeSearchTerm()', () => {
     expect(sanitizeSearchTerm('tele=vision')).toStrictEqual('television');
   });
 
+  it('should remove \'%\' char', () => {
+    expect.assertions(1);
+    expect(sanitizeSearchTerm('%tele%vision')).toStrictEqual('television');
+  });
+
   it('should remove whitespace', () => {
     expect.assertions(1);
     expect(sanitizeSearchTerm(' television   ')).toStrictEqual('television');
@@ -28,6 +33,6 @@ describe('sanitizeSearchTerm()', () => {
 
   it('should remove all mixed chars', () => {
     expect.assertions(1);
-    expect(sanitizeSearchTerm(' ?=[television]   &')).toStrictEqual('television');
+    expect(sanitizeSearchTerm(' ?=[television]  %  &')).toStrictEqual('television');
   });
 });

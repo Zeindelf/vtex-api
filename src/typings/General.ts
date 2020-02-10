@@ -40,7 +40,6 @@ interface ISearchProductParams {
   from?: number
   to?: number
   priceRange?: string
-  query?: string
   headers?: string[]
   accountName?: string
   auth?: IAuthentication
