@@ -35,11 +35,15 @@ interface ISearchAutocompleteResponse {
 }
 
 interface ISearchProductParams {
-  searchTerm: string
+  ft?: string
+  fq?: IFullQuery
   orderBy?: string
   from?: number
   to?: number
   priceRange?: string
+  collection?: string
+  salesChannel?: string
+  seller?: string
   headers?: string[]
   accountName?: string
   auth?: IAuthentication
@@ -70,4 +74,66 @@ interface ICategoryTreeResponse {
   children: ICategoryTreeResponse[]
   Title: string
   MetaTagDescription: string
+}
+
+interface ISearchFacetsParams {
+  pathname: string
+  map: string
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
+}
+
+interface ISearchFacet {
+  Quantity: number
+  Name: string
+  Link: string
+  LinkEncoded: string
+  Map: string
+  Value: string
+}
+
+interface ISearchFacetCategory {
+  Id: number
+  Quantity: number
+  Name: string
+  Link: string
+  LinkEncoded: string
+  Map: string
+  Value: string
+  Children: ISearchFacetCategory[]
+}
+
+interface ISummaryItem {
+  DisplayedItems: number
+  TotalItems: number
+}
+
+interface ISearchFacets {
+  Departments: ISearchFacet[]
+  Brands: ISearchFacet[]
+  SpecificationFilters: Record<string, ISearchFacet[]>
+  CategoriesTrees: ISearchFacetCategory[]
+  PriceRanges: {
+    Slug: string
+    Quantity: number
+    Name: string
+    Link: string
+    LinkEncoded: string
+    Map: null
+    Value: string
+  }[]
+  Summary: {
+    Departments: ISummaryItem
+    CategoriesTrees: ISummaryItem
+    Brands: ISummaryItem
+    PriceRanges: ISummaryItem
+    SpecificationFilters: Record<string, ISummaryItem>
+  }
+}
+
+interface IGetProductParams {
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
 }

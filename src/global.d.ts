@@ -10,6 +10,8 @@ interface IAuthentication {
   appToken: string
 }
 
+type IFullQuery = string | number | any[];
+
 interface IObj {
   [key: string]: any
 }
