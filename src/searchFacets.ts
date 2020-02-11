@@ -21,8 +21,8 @@ const searchFacets = ({
   const normalizedPath = trimSlashes(normalizeSlashes(trim(pathname)));
 
   return catalogRequest({
-    path: `/facets/search/${encodeURIComponent(normalizedPath)}`,
-    query: map,
+    path: `/facets/search/${normalizedPath}`,
+    query: `map=${map}`,
     headers,
     accountName,
     auth,
