@@ -24,7 +24,7 @@ import partialUpdate from './services/partialUpdate';
  */
 const updateDocument = ({
   id, data, entity, auth, accountName,
-}: IPartialUpdate): Promise<IResponse> => (
+}: IPartialUpdateArgs): Promise<IResponse> => (
   partialUpdate({
     id, data, entity, auth, accountName,
   })

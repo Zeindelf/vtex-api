@@ -4,7 +4,7 @@ interface IFilters {
   _sort?: string
 }
 
-interface IMasterdataParams {
+interface IMasterdataArgs {
   method: string
   entity: string
   type: string
@@ -13,7 +13,7 @@ interface IMasterdataParams {
   accountName?: string
 }
 
-interface IMasterdataRequest {
+interface IMasterdataRequestArgs {
   entity: string
   type: string
   method: string
@@ -24,7 +24,7 @@ interface IMasterdataRequest {
   auth?: IAuthentication
 }
 
-interface ISearchDocument {
+interface ISearchDocumentArgs {
   search: IObj
   entity: string
   fields?: string[]
@@ -35,14 +35,14 @@ interface ISearchDocument {
   accountName?: string
 }
 
-interface IInsertDeocument {
+interface IInsertDeocumentArgs {
   data: IObj
   entity: string
   auth?: IAuthentication
   accountName?: string
 }
 
-interface IPartialUpdate {
+interface IPartialUpdateArgs {
   id: string
   data: IObj
   entity: string
@@ -50,7 +50,7 @@ interface IPartialUpdate {
   accountName?: string
 }
 
-interface IGetDocument {
+interface IGetDocumentArgs {
   id: string
   fields: string[],
   entity: string
@@ -58,21 +58,21 @@ interface IGetDocument {
   accountName?: string
 }
 
-interface IGetUser {
+interface IGetUserArgs {
   email: string
   fields: string[]
   auth?: IAuthentication
   accountName?: string
 }
 
-interface IUpdateUser {
+interface IUpdateUserArgs {
   email: string
   data: IObj
   auth?: IAuthentication
   accountName?: string
 }
 
-interface INewsletterOptIn {
+interface INewsletterOptInArgs {
   email: string
   optIn?: boolean
   data?: IObj
@@ -80,7 +80,7 @@ interface INewsletterOptIn {
   accountName?: string
 }
 
-interface IAttachmentParams {
+interface IAttachmentArgs {
   id: string | number
   entity: string
   formData: FormData
@@ -89,7 +89,7 @@ interface IAttachmentParams {
   accountName?: string
 }
 
-interface IUploadFile {
+interface IUploadFileArgs {
   id: string | number
   entity: string
   file: File

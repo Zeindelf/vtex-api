@@ -8,7 +8,7 @@ import request from '../request';
  */
 const attachmentRequest = ({
   id, entity, formData, field, auth, accountName,
-}: IAttachmentParams): Promise<IResponse> => {
+}: IAttachmentArgs): Promise<IResponse> => {
   const url = `${hostname(accountName)}/api/dataentities/${entity}/documents/${id}/${field}/attachments`;
   const authentication = createAuthentication(auth);
   const defaults = ['Accept: application/vnd.vtex.ds.v10+json'];

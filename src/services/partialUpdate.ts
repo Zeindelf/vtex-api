@@ -24,7 +24,7 @@ import masterdataRequest from './masterdataRequest';
  */
 const partialUpdate = ({
   id, data, entity, auth, accountName,
-}: IPartialUpdate): Promise<IResponse> => (
+}: IPartialUpdateArgs): Promise<IResponse> => (
   masterdataRequest({
     method: 'PATCH',
     id,

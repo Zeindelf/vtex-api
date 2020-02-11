@@ -8,7 +8,7 @@ import request from '../request';
  */
 const masterdataRequest = ({
   entity, type, id, method, data, headers, accountName, auth,
-}: IMasterdataRequest): Promise<any> => {
+}: IMasterdataRequestArgs): Promise<any> => {
   const authentication = createAuthentication(auth);
   const url = createMasterdataUrl({
     entity, type, id, method, data, accountName,

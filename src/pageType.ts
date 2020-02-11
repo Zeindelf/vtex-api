@@ -6,7 +6,7 @@ import trimSlahes from './utils/trimSlashes';
  */
 const pageType = ({
   path, query, headers, accountName, auth,
-}: IPageTypeParams): Promise<{
+}: IPageTypeArgs): Promise<{
   status: number, json: IPageTypeResponse, headers: Headers
 }> => catalogRequest({
   path: `/portal/pagetype/${trimSlahes(path)}`,

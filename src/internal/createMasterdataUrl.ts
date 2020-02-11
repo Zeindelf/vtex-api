@@ -6,7 +6,7 @@ import hostname from './hostname';
  */
 const createMasterdataUrl = ({
   entity, type, id, method, data, accountName,
-}: IMasterdataParams): string => {
+}: IMasterdataArgs): string => {
   const mountedUrl = `${hostname(accountName)}/api/dataentities/${entity}/${type}/${id || ''}`;
   const mountedData = data ? `?${encode(data)}` : '';
   const hasAn = data && Object.prototype.hasOwnProperty.call(data, 'an');

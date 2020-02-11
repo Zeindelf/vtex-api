@@ -1,14 +1,16 @@
 import searchProduct from './searchProduct';
 
-interface IGetProductsById extends IGetProductParams {
+interface IGetProductsById extends IGetProductArgs {
   ids: any[]
+}
+
+interface IGetProductsResponse extends IResponse {
+  json: IProduct[] | []
 }
 
 const getProductsById = async ({
   ids, headers, accountName, auth,
-}: IGetProductsById): Promise<{
-  status: number, json: IProduct[] | [], headers: Headers
-}> => (
+}: IGetProductsById): Promise<IGetProductsResponse> => (
   searchProduct({
     fq: ids.map((id) => `productId:${id}`),
     headers,

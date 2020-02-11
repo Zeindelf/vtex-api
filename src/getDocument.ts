@@ -22,7 +22,7 @@ import masterdataRequest from './services/masterdataRequest';
  */
 const getDocument = ({
   id, fields, entity, auth, accountName,
-}: IGetDocument): Promise<IResponse> => (
+}: IGetDocumentArgs): Promise<IResponse> => (
   masterdataRequest({
     method: 'GET',
     id,

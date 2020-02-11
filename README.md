@@ -6,6 +6,7 @@
 [![Codecov][codecov-badge]][codecov]
 [![Bundle Size][bundle-size-badge]][bundle-size]
 [![David][deps-badge]][deps]
+[![Known Vulnerabilities][snyk-badge]][snyk]
 [![CodeFactor][codefactor-badge]][codefactor]
 [![MIT License][license-badge]][license]
 
@@ -99,6 +100,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 [deps]: https://github.com/Zeindelf/vtex-api
 [deps-badge]: https://david-dm.org/zeindelf/vtex-api.svg
+
+[snyk]: https://snyk.io/test/npm/vtex-api
+[snyk-badge]: https://snyk.io/test/npm/vtex-api/badge.svg
 
 [codefactor]: https://www.codefactor.io/repository/github/zeindelf/vtex-api
 [codefactor-badge]: https://www.codefactor.io/repository/github/zeindelf/vtex-api/badge

@@ -1,10 +1,10 @@
-interface ICatalogUrlParams {
+interface ICatalogUrlArgs {
   path: string
   query?: string
   accountName?: string
 }
 
-interface ICatalogRequest {
+interface ICatalogRequestArgs {
   path: string
   query?: string
   headers?: string[]
@@ -12,7 +12,7 @@ interface ICatalogRequest {
   auth?: IAuthentication
 }
 
-interface ISearchAutocompleteParams {
+interface ISearchAutocompleteArgs {
   maxRows: number | string
   searchTerm: string
 }
@@ -34,7 +34,7 @@ interface ISearchAutocompleteResponse {
   criteria: string
 }
 
-interface ISearchProductParams {
+interface ISearchProductArgs {
   ft?: string
   fq?: IFullQuery
   orderBy?: string
@@ -49,7 +49,7 @@ interface ISearchProductParams {
   auth?: IAuthentication
 }
 
-interface IPageTypeParams {
+interface IPageTypeArgs {
   path: string
   query?: string
   headers?: string[]
@@ -76,7 +76,7 @@ interface ICategoryTreeResponse {
   MetaTagDescription: string
 }
 
-interface ISearchFacetsParams {
+interface ISearchFacetsArgs {
   pathname: string
   map: string
   headers?: string[]
@@ -130,10 +130,4 @@ interface ISearchFacets {
     PriceRanges: ISummaryItem
     SpecificationFilters: Record<string, ISummaryItem>
   }
-}
-
-interface IGetProductParams {
-  headers?: string[]
-  accountName?: string
-  auth?: IAuthentication
 }

@@ -22,7 +22,7 @@ import updateUser from './updateUser';
  */
 const newsletterOptIn = ({
   email, optIn = true, data, auth, accountName,
-}: INewsletterOptIn): Promise<IResponse> => (
+}: INewsletterOptInArgs): Promise<IResponse> => (
   updateUser({
     email,
     data: {

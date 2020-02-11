@@ -3,6 +3,10 @@ import normalizeSlashes from './utils/normalizeSlashes';
 import trimSlashes from './utils/trimSlashes';
 import trim from './utils/trim';
 
+interface ISearchFacetsResponse extends IResponse {
+  json: ISearchFacets[] | []
+}
+
 /**
  * @description
  * Search facets by url
@@ -15,9 +19,7 @@ import trim from './utils/trim';
  */
 const searchFacets = ({
   pathname, map, headers, accountName, auth,
-}: ISearchFacetsParams): Promise<{
-  status: number, json: ISearchFacets[] | [], headers: Headers
-}> => {
+}: ISearchFacetsArgs): Promise<ISearchFacetsResponse> => {
   const normalizedPath = trimSlashes(normalizeSlashes(trim(pathname)));
 
   return catalogRequest({

@@ -1,6 +1,6 @@
 import request from './request';
 
-const notifyMe = ({ name, email, itemId }: INotifyMe): Promise<IResponse> => {
+const notifyMe = ({ name, email, itemId }: INotifyMeArgs): Promise<IResponse> => {
   const formData = new FormData();
   formData.append('notifymeClientName', name);
   formData.append('notifymeClientEmail', email);

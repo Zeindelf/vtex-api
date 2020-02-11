@@ -1,15 +1,17 @@
 import searchProduct from './searchProduct';
 import head from './utils/head';
 
-interface IGetProductById extends IGetProductParams {
+interface IGetProductById extends IGetProductArgs {
   id: string | number
+}
+
+interface IGetProductResponse extends IResponse {
+  json: IProduct | false
 }
 
 const getProductById = async ({
   id, headers, accountName, auth,
-}: IGetProductById): Promise<{
-  status: number, json: IProduct | false, headers: Headers
-}> => {
+}: IGetProductById): Promise<IGetProductResponse> => {
   const { json, ...rest } = await searchProduct({
     fq: `productId:${id}`,
     headers,

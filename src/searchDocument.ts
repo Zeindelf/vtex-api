@@ -8,7 +8,7 @@ import masterdataRequest from './services/masterdataRequest';
  * @param {object} search         The search parameters
  * @param {string} entity         The entity where the search will be performed
  * @param {array} fields          The Fields that will be retrieved
- * @param {object} [filters=null] The filters params. Accept: _where, _keyword and _sort
+ * @param {object} [filters=null] The filters args. Accept: _where, _keyword and _sort
  * @param {number} [offset=0]     The search offset
  * @param {number} [limit=49]     The search limit
  *
@@ -33,10 +33,11 @@ import masterdataRequest from './services/masterdataRequest';
  */
 const searchDocument = ({
   search, entity, fields, filters, offset = 0, limit = 49, auth, accountName,
-}: ISearchDocument): Promise<IResponse> => {
+}: ISearchDocumentArgs): Promise<IResponse> => {
+  // Needs refactor to _from/_to args
   const headers = [`REST-Range: resources=${offset}-${limit + offset}`];
 
-  const params = {
+  const args = {
     ...search,
     ...filters,
     _fields: parseFileds(fields),
@@ -46,7 +47,7 @@ const searchDocument = ({
     entity,
     type: 'search',
     method: 'GET',
-    data: params,
+    data: args,
     headers,
     auth,
     accountName,

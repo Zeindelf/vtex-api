@@ -30,7 +30,7 @@ import attachmentRequest from './services/attachmentRequest';
  */
 const uploadFile = ({
   id, entity, file, field, auth, accountName,
-}: IUploadFile): Promise<IResponse> => {
+}: IUploadFileArgs): Promise<IResponse> => {
   const formData = new FormData();
   formData.append('Filename', file.name);
   formData.append('Filedata', file);

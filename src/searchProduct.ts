@@ -1,6 +1,10 @@
 import catalogRequest from './services/catalogRequest';
 import trim from './utils/trim';
 
+interface ISearchProductResponse extends IResponse {
+  json: IProduct[] | []
+}
+
 /**
  * @module catalog-system
  */
@@ -17,9 +21,7 @@ const searchProduct = ({
   headers,
   accountName,
   auth,
-}: ISearchProductParams): Promise<{
-  status: number, json: IProduct[] | [], headers: Headers
-}> => {
+}: ISearchProductArgs): Promise<ISearchProductResponse> => {
   let query = '';
 
   if (ft) query += `ft=${trim(ft)}`;

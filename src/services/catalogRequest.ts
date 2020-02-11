@@ -8,7 +8,7 @@ import createAuthentication from '../internal/createAuthentication';
  */
 const catalogRequest = ({
   path, query, headers, accountName, auth,
-}: ICatalogRequest): Promise<IResponse> => {
+}: ICatalogRequestArgs): Promise<IResponse> => {
   const authentication = createAuthentication(auth);
   const url = createCatalogUrl({
     path, query, accountName,

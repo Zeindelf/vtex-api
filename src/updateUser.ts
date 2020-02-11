@@ -27,7 +27,7 @@ import insertDocument from './insertDocument';
  */
 const updateUser = async ({
   email, data, auth, accountName,
-}: IUpdateUser): Promise<IResponse> => {
+}: IUpdateUserArgs): Promise<IResponse> => {
   const { json } = await getUser({ email, fields: ['id'] });
 
   return resultOk(json)

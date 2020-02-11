@@ -1,4 +1,4 @@
-interface INotifyMe {
+interface INotifyMeArgs {
   name: string
   email: string
   itemId: string | number
@@ -10,7 +10,7 @@ interface IRequestItems {
   seller: string | number
 }
 
-interface ISimulateShipping {
+interface ISimulateShippingArgs {
   postalCode: string | number
   items: IRequestItems[]
   sc: string | number
@@ -104,4 +104,10 @@ interface ISeller {
   addToCartLink: string
   sellerDefault: boolean
   commertialOffer: ICommertialOffer
+}
+
+interface IGetProductArgs {
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
 }

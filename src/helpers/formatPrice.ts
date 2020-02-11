@@ -1,4 +1,4 @@
-type Format = {
+type FormatArgs = {
   thousands?: string,
   decimals?: string,
   length?: number,
@@ -19,7 +19,7 @@ type Format = {
  */
 const formatPrice = (value: number, {
   thousands = '.', decimals = ',', length = 2, currency = 'R$ ',
-}: Format = {}): string => {
+}: FormatArgs = {}): string => {
   const regex = `\\d(?=(\\d{${3}})+${length > 0 ? '\\D' : '$'})`;
   const val = (value / 100).toFixed(Math.max(0, ~~length)); // eslint-disable-line no-bitwise
 

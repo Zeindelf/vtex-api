@@ -2,7 +2,7 @@ import request from './request';
 
 const simulateShipping = ({
   postalCode, items, sc = 1,
-}: ISimulateShipping): Promise<IResponse> => (
+}: ISimulateShippingArgs): Promise<IResponse> => (
   request(`/api/checkout/pub/orderForms/simulation?sc=${sc}`, {
     method: 'POST',
     headers: {

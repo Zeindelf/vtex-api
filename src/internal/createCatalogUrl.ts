@@ -7,7 +7,7 @@ import trimSlahes from '../utils/trimSlashes';
  */
 const createCatalogUrl = ({
   path, query, accountName,
-}: ICatalogUrlParams): string => {
+}: ICatalogUrlArgs): string => {
   const url = `
     ${hostname(accountName)}/api/catalog_system/pub/${trimSlahes(path)}${query && `?${trim(query)}`}
   `;
