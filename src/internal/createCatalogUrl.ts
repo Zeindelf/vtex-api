@@ -9,7 +9,7 @@ const createCatalogUrl = ({
   path, query, accountName,
 }: ICatalogUrlArgs): string => {
   const url = `
-    ${hostname(accountName)}/api/catalog_system/pub/${trimSlahes(path)}${query && `?${trim(query)}`}
+    ${hostname(accountName)}/api/catalog_system/pub/${trimSlahes(path)}${query ? `?${trim(query)}` : ''}
   `;
 
   return trim(url);
