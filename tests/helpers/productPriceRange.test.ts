@@ -7,15 +7,15 @@ describe('productPriceRange()', () => {
 
     // @ts-ignore
     const { listPrice } = productPriceRange(skusSeller);
-    expect(listPrice).toStrictEqual({ highPrice: 690, lowPrice: 195 });
+    expect(listPrice).toStrictEqual({ highPrice: 69000, lowPrice: 19500 });
   });
 
-  it('should return sellingPrice range for default seller', () => {
+  it('should return bestPrice range for default seller', () => {
     expect.assertions(1);
 
     // @ts-ignore
-    const { sellingPrice } = productPriceRange(skusSeller);
-    expect(sellingPrice).toStrictEqual({ highPrice: 552, lowPrice: 157 });
+    const { bestPrice } = productPriceRange(skusSeller);
+    expect(bestPrice).toStrictEqual({ highPrice: 55200, lowPrice: 15700 });
   });
 
   it('should return listPrice range for custom seller', () => {
@@ -23,14 +23,14 @@ describe('productPriceRange()', () => {
 
     // @ts-ignore
     const { listPrice } = productPriceRange(skusSeller, '2');
-    expect(listPrice).toStrictEqual({ highPrice: 695, lowPrice: 200 });
+    expect(listPrice).toStrictEqual({ highPrice: 69500, lowPrice: 20000 });
   });
 
-  it('should return sellingPrice range for custom seller', () => {
+  it('should return bestPrice range for custom seller', () => {
     expect.assertions(1);
 
     // @ts-ignore
-    const { sellingPrice } = productPriceRange(skusSeller, '2');
-    expect(sellingPrice).toStrictEqual({ highPrice: 562, lowPrice: 167 });
+    const { bestPrice } = productPriceRange(skusSeller, '2');
+    expect(bestPrice).toStrictEqual({ highPrice: 56200, lowPrice: 16700 });
   });
 });

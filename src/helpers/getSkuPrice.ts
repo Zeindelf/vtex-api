@@ -7,15 +7,15 @@ const getSkuPrice = (sku: IObj, sellerId?: number | string) => {
   const { commertialOffer: co } = seller;
   const installments = getSkuInstallments(sku);
   const quantity = co.AvailableQuantity;
-  const noListPrice = co.Price === co.ListPrice;
 
   return {
     available: Boolean(quantity),
     availableQuantity: quantity,
     seller: seller.sellerName,
     sellerId: seller.sellerId,
+    hasListPrice: co.Price !== co.ListPrice,
     bestPrice: fixProductSearchPrice(co.Price) || quantity,
-    listPrice: noListPrice ? false : fixProductSearchPrice(co.ListPrice),
+    listPrice: fixProductSearchPrice(co.ListPrice),
     installments: installments.NumberOfInstallments,
     installmentsValue: fixProductSearchPrice(installments.Value),
     installmentsInterestRate: installments.InterestRate,

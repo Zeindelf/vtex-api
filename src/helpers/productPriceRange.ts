@@ -1,4 +1,5 @@
 import getSkuSeller from './getSkuSeller';
+import fixProductSearchPrice from './fixProductSearchPrice';
 
 const getMinMaxValue = (
   offers: ICommertialOffer[],
@@ -37,10 +38,18 @@ const productPriceRange = (
   sellerId?: number | string,
 ) => {
   const commertialOffers = getCommertialOffers(skus, sellerId);
+  const best = getMinMaxValue(commertialOffers, 'Price');
+  const list = getMinMaxValue(commertialOffers, 'ListPrice');
 
   return {
-    sellingPrice: getMinMaxValue(commertialOffers, 'Price'),
-    listPrice: getMinMaxValue(commertialOffers, 'ListPrice'),
+    bestPrice: {
+      highPrice: fixProductSearchPrice(best.highPrice),
+      lowPrice: fixProductSearchPrice(best.lowPrice),
+    },
+    listPrice: {
+      highPrice: fixProductSearchPrice(list.highPrice),
+      lowPrice: fixProductSearchPrice(list.lowPrice),
+    },
   };
 };
 

@@ -37,3 +37,4 @@ export { default as isSearchTerm } from './helpers/isSearchTerm';
 export { default as productPriceRange } from './helpers/productPriceRange';
 export { default as resizeImage } from './helpers/resizeImage';
 export { default as sanitizeSearchTerm } from './helpers/sanitizeSearchTerm';
+export { default as setInstallment } from './helpers/setInstallment';

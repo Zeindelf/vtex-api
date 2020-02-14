@@ -17,4 +17,10 @@ describe('createCatalogUrl()', () => {
     expect(createCatalogUrl({ ...searchUrl, accountName: 'storename' }))
       .toStrictEqual('https://storename.vtexcommercestable.com.br/api/catalog_system/pub/products/search?ft=television');
   });
+
+  it('should be create relative catalog url without query', () => {
+    expect.assertions(1);
+    expect(createCatalogUrl({ path: 'products/search' }))
+      .toStrictEqual('/api/catalog_system/pub/products/search');
+  });
 });

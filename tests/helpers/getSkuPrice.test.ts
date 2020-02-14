@@ -7,25 +7,27 @@ describe('getSkuPrice()', () => {
   const skuPriceUnavailable = {
     available: false,
     availableQuantity: 0,
+    seller: 'shoponline',
+    sellerId: '1',
+    hasListPrice: false,
     bestPrice: 0,
+    listPrice: 0,
     installments: undefined,
     installmentsInterestRate: undefined,
     installmentsValue: undefined,
-    listPrice: false,
-    seller: 'shoponline',
-    sellerId: '1',
   };
 
   const skuPriceAvailable = {
     available: true,
     availableQuantity: 33,
+    seller: 'shoponline',
+    sellerId: '1',
+    hasListPrice: true,
     bestPrice: 8900,
+    listPrice: 16990,
     installments: 2,
     installmentsInterestRate: 0,
     installmentsValue: 4450,
-    listPrice: 16990,
-    seller: 'shoponline',
-    sellerId: '1',
   };
 
   it('should return prince info for unavailable product', () => {
