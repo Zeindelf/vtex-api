@@ -1,5 +1,5 @@
 const normalizeSlashes = (str: string): string => (
-  str.replace(/(?<!https?:)\/{2,}/g, '/')
+  str.replace(/(https?:\/\/)|(\/)+/g, '$1$2')
 );
 
 export default normalizeSlashes;
