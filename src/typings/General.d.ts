@@ -66,12 +66,27 @@ interface IPageTypeResponse {
   metaTagDescription: string | null
 }
 
-interface ICategoryTreeResponse {
+interface ICategoryTree {
   id: number
   name: string
   hasChildren: boolean
   url: string
-  children: ICategoryTreeResponse[]
+  children: ICategoryTree[]
+  Title: string
+  MetaTagDescription: string
+}
+
+interface ICategoryById {
+  parentId: number | null
+  GlobalCategoryId: number
+  GlobalCategoryName: string
+  position: number
+  slug: string
+  id: number
+  name: string
+  hasChildren: boolean
+  url: string
+  children: null
   Title: string
   MetaTagDescription: string
 }
@@ -130,4 +145,13 @@ interface ISearchFacets {
     PriceRanges: ISummaryItem
     SpecificationFilters: Record<string, ISummaryItem>
   }
+}
+
+interface IBrand {
+  id: string
+  name: string
+  isActive: boolean
+  title: string | null
+  metaTagDescription: string | null
+  imageUrl: string | null
 }

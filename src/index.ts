@@ -2,8 +2,13 @@ export { default as request } from './request';
 export { default as requestTimeout } from './requestTimeout';
 
 /** General */
+export { default as getCategories } from './getCategories';
+export { default as getCategoryById } from './getCategoryById';
+export { default as getBrandById } from './getBrandById';
+export { default as getBrands } from './getBrands';
 export { default as pageType } from './pageType';
 export { default as searchAutocomplete } from './searchAutocomplete';
+export { default as searchCrossSelling } from './searchCrossSelling';
 export { default as searchProduct } from './searchProduct';
 
 /** Masterdata methods */
@@ -18,12 +23,12 @@ export { default as getUser } from './getUser';
 export { default as updateUser } from './updateUser';
 export { default as newsletterOptIn } from './newsletterOptIn';
 export { default as uploadFile } from './uploadFile';
-export { default as getProductById } from './getProductById';
-export { default as getProductsById } from './getProductsById';
 
 /** Product */
 export { default as notifyMe } from './notifyMe';
 export { default as simulateShipping } from './simulateShipping';
+export { default as getProductById } from './getProductById';
+export { default as getProductsById } from './getProductsById';
 
 /** Helpers */
 export { default as fixProductSearchPrice } from './helpers/fixProductSearchPrice';
