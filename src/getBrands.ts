@@ -1,11 +1,22 @@
-import request from './request';
+import catalogRequest from './services/catalogRequest';
 
 interface IBrandResponse extends IResponse {
   json: IBrand[]
 }
 
-const getBrands = (): Promise<IBrandResponse> => (
-  request('/api/catalog_system/pub/brand/list')
+/**
+ * @module catalog-system
+ */
+const getBrands = ({
+  query, headers, accountName, auth,
+}: IGetBrandsArgs): Promise<IBrandResponse> => (
+  catalogRequest({
+    path: '/brand/list',
+    query,
+    headers,
+    accountName,
+    auth,
+  })
 );
 
 export default getBrands;

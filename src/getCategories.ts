@@ -1,11 +1,22 @@
-import request from './request';
+import catalogRequest from './services/catalogRequest';
 
 interface ICategoryTreeResponse extends IResponse {
   json: ICategoryTree[]
 }
 
-const getCategories = (treeLevel: number): Promise<ICategoryTreeResponse> => (
-  request(`/api/catalog_system/pub/category/tree/${treeLevel}`)
+/**
+ * @module catalog-system
+ */
+const getCategories = ({
+  treeLevel, query, headers, accountName, auth,
+}: IGetCategoriesArgs): Promise<ICategoryTreeResponse> => (
+  catalogRequest({
+    path: `/category/tree/${treeLevel}`,
+    query,
+    headers,
+    accountName,
+    auth,
+  })
 );
 
 export default getCategories;

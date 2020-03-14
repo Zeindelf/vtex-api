@@ -57,13 +57,29 @@ interface IPageTypeArgs {
   auth?: IAuthentication
 }
 
-interface IPageTypeResponse {
+interface IPageType {
   id: string
   pageType: string
   name: string
   url: string
   title: string | null
   metaTagDescription: string | null
+}
+
+interface IGetCategoriesArgs {
+  treeLevel: number
+  query?: string
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
+}
+
+interface IGetCategoryByIdArgs {
+  id: number
+  query?: string
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
 }
 
 interface ICategoryTree {
@@ -145,6 +161,21 @@ interface ISearchFacets {
     PriceRanges: ISummaryItem
     SpecificationFilters: Record<string, ISummaryItem>
   }
+}
+
+interface IGetBrandsArgs {
+  query?: string
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
+}
+
+interface IGetBrandByIdArgs {
+  id: number | string
+  query?: string
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
 }
 
 interface IBrand {

@@ -1,14 +1,16 @@
 import catalogRequest from './services/catalogRequest';
 import trimSlahes from './utils/trimSlashes';
 
+interface IPageTypeResponse extends IResponse {
+  json: IPageType
+}
+
 /**
  * @module catalog-system
  */
 const pageType = ({
   path, query, headers, accountName, auth,
-}: IPageTypeArgs): Promise<{
-  status: number, json: IPageTypeResponse, headers: Headers
-}> => catalogRequest({
+}: IPageTypeArgs): Promise<IPageTypeResponse> => catalogRequest({
   path: `/portal/pagetype/${trimSlahes(path)}`,
   query,
   headers,
