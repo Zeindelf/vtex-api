@@ -9,7 +9,7 @@ interface IBrandResponse extends IResponse {
  */
 const getBrands = ({
   query, headers, accountName, auth,
-}: IGetBrandsArgs): Promise<IBrandResponse> => (
+}: IGetBrandsArgs = {}): Promise<IBrandResponse> => (
   catalogRequest({
     path: '/brand/list',
     query,
