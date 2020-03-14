@@ -39,6 +39,7 @@ export { default as getSkuInstallments } from './helpers/getSkuInstallments';
 export { default as getSkuPrice } from './helpers/getSkuPrice';
 export { default as getSkuSeller } from './helpers/getSkuSeller';
 export { default as isSearchTerm } from './helpers/isSearchTerm';
+export { default as isSkuAvailable } from './helpers/isSkuAvailable';
 export { default as productPriceRange } from './helpers/productPriceRange';
 export { default as resizeImage } from './helpers/resizeImage';
 export { default as sanitizeSearchTerm } from './helpers/sanitizeSearchTerm';
