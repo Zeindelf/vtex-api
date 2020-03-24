@@ -1,7 +1,7 @@
 import getSkuSeller from './getSkuSeller';
 
-const isSkuAvailable = (sku: IObj): Boolean => {
-  const seller = getSkuSeller(sku);
+const isSkuAvailable = (sku: IObj, sellerId?: number | string): Boolean => {
+  const seller = getSkuSeller(sku, sellerId);
 
   return seller
     && seller.commertialOffer
