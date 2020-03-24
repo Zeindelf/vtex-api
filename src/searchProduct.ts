@@ -32,7 +32,7 @@ const searchProduct = ({
   if (priceRange) query += `&fq=P:[${priceRange}]`;
   if (collection) query += `&fq=productClusterIds:${collection}`;
   if (salesChannel) query += `&fq=isAvailablePerSalesChannel_${salesChannel}:1`;
-  if (seller) query += `fq=sellerIds:${seller}`;
+  if (seller) query += `&fq=sellerIds:${seller}`;
   if (query.charAt(0) === '&') query = query.substr(1);
 
   return catalogRequest({
