@@ -1,5 +1,6 @@
-import getSkuSeller from './getSkuSeller';
 import fixProductSearchPrice from './fixProductSearchPrice';
+import getSkuSeller from './getSkuSeller';
+import isSkuAvailable from './isSkuAvailable';
 
 const getMinMaxValue = (
   offers: ICommertialOffer[],
@@ -21,10 +22,12 @@ const getMinMaxValue = (
 const getCommertialOffers = (
   skus: IProductItem[],
   sellerId?: number | string,
-): ICommertialOffer[] => skus.map((sku: IProductItem) => {
+): ICommertialOffer[] | any[] => skus.map((sku: IProductItem) => {
+  if (!isSkuAvailable(sku, sellerId)) return false;
+
   const { commertialOffer } = getSkuSeller(sku, sellerId);
   return commertialOffer;
-});
+}).filter(Boolean);
 
 /**
  * @description
