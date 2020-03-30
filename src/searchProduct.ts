@@ -24,8 +24,9 @@ const searchProduct = ({
 }: ISearchProductArgs): Promise<ISearchProductResponse> => {
   let query = '';
 
-  if (ft) query += `ft=${trim(ft)}`;
-  if (fq) query += Array.isArray(fq) ? fq.map((val) => `fq=${val}`).join('&') : `&fq=${fq}`;
+  if (ft) query += `&ft=${trim(ft)}`;
+  // eslint-disable-next-line prefer-template
+  if (fq) query += '&' + (Array.isArray(fq) ? fq.map((val) => `fq=${val}`).join('&') : `fq=${fq}`);
   if (orderBy) query += `&O=${orderBy}`;
   if (from !== undefined && from > -1) query += `&_from=${from}`;
   if (to !== undefined && to > -1) query += `&_to=${to}`;
