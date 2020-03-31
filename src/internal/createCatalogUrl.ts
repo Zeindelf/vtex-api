@@ -1,6 +1,6 @@
 import hostname from './hostname';
-import trim from '../utils/trim';
 import trimSlahes from '../utils/trimSlashes';
+import clearQuery from '../utils/clearQuery';
 
 /**
  * @module catalog-system
@@ -8,11 +8,11 @@ import trimSlahes from '../utils/trimSlashes';
 const createCatalogUrl = ({
   path, query, accountName,
 }: ICatalogUrlArgs): string => {
-  const url = `
-    ${hostname(accountName)}/api/catalog_system/pub/${trimSlahes(path)}${query ? `?${trim(query)}` : ''}
-  `;
+  const cleanQuery = query
+    ? `?${clearQuery(query)}`
+    : '';
 
-  return trim(url);
+  return `${hostname(accountName)}/api/catalog_system/pub/${trimSlahes(path)}${cleanQuery}`;
 };
 
 export default createCatalogUrl;
