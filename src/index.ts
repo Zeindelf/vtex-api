@@ -34,6 +34,7 @@ export { default as getProductsById } from './getProductsById';
 export { default as fixProductSearchPrice } from './helpers/fixProductSearchPrice';
 export { default as formatPrice } from './helpers/formatPrice';
 export { default as getFirstAvailableSku } from './helpers/getFirstAvailableSku';
+export { default as getFirstAvailableSkuBySeller } from './helpers/getFirstAvailableSkuBySeller';
 export { default as getPercentage } from './helpers/getPercentage';
 export { default as getSkuInstallments } from './helpers/getSkuInstallments';
 export { default as getSkuPrice } from './helpers/getSkuPrice';
