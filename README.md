@@ -8,6 +8,7 @@
 [![David][deps-badge]][deps]
 [![Known Vulnerabilities][snyk-badge]][snyk]
 [![CodeFactor][codefactor-badge]][codefactor]
+[![Total alerts][lgtm-badge]][lgtm]
 [![MIT License][license-badge]][license]
 
 <p>An isomorphic and depency free collection of VTEX APIs methods</p>
@@ -106,6 +107,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 [codefactor]: https://www.codefactor.io/repository/github/zeindelf/vtex-api
 [codefactor-badge]: https://www.codefactor.io/repository/github/zeindelf/vtex-api/badge
+
+[lgtm]: https://lgtm.com/projects/g/Zeindelf/vtex-api/alerts/
+[lgtm-badge]: https://img.shields.io/lgtm/alerts/g/Zeindelf/vtex-api.svg?logo=lgtm&logoWidth=18
 
 [license]: https://github.com/zeindelf/vtex-api/blob/master/LICENSE
 [license-badge]: https://img.shields.io/npm/l/vtex-api.svg?style=flat-square
