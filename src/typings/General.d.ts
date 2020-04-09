@@ -49,6 +49,14 @@ interface ISearchProductArgs {
   auth?: IAuthentication
 }
 
+interface IGetProductResponse extends IResponse {
+  json: IProduct | false
+}
+
+interface IGetProductsResponse extends IResponse {
+  json: IProduct[] | []
+}
+
 interface IPageTypeArgs {
   path: string
   query?: string

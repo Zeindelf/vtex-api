@@ -1,5 +1,5 @@
 import hostname from './hostname';
-import trimSlahes from '../utils/trimSlashes';
+import trimSlashes from '../utils/trimSlashes';
 import clearQuery from '../utils/clearQuery';
 
 /**
@@ -12,7 +12,7 @@ const createCatalogUrl = ({
     ? `?${clearQuery(query)}`
     : '';
 
-  return `${hostname(accountName)}/api/catalog_system/pub/${trimSlahes(path)}${cleanQuery}`;
+  return `${hostname(accountName)}/api/catalog_system/pub/${trimSlashes(path)}${cleanQuery}`;
 };
 
 export default createCatalogUrl;

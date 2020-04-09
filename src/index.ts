@@ -27,8 +27,12 @@ export { default as uploadFile } from './uploadFile';
 /** Product */
 export { default as notifyMe } from './notifyMe';
 export { default as simulateShipping } from './simulateShipping';
+export { default as getProductByEan } from './getProductByEan';
 export { default as getProductById } from './getProductById';
+export { default as getProductByRefId } from './getProductByRefId';
+export { default as getProductsByEan } from './getProductByEan';
 export { default as getProductsById } from './getProductsById';
+export { default as getProductsByRefId } from './getProductsByRefId';
 
 /** Helpers */
 export { default as fixProductSearchPrice } from './helpers/fixProductSearchPrice';

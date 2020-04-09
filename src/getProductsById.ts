@@ -4,10 +4,9 @@ interface IGetProductsById extends IGetProductArgs {
   ids: any[]
 }
 
-interface IGetProductsResponse extends IResponse {
-  json: IProduct[] | []
-}
-
+/**
+ * @module product
+ */
 const getProductsById = async ({
   ids, headers, accountName, auth,
 }: IGetProductsById): Promise<IGetProductsResponse> => (
