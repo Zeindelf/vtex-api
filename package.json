@@ -1,6 +1,6 @@
 {
   "name": "vtex-api",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "A collection of VTEX APIs methods",
   "main": "lib/index.js",
   "module": "esm/index.js",
