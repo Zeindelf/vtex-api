@@ -1,7 +1,7 @@
 import searchProduct from './searchProduct';
 import head from './utils/head';
 
-interface IGetProductByEan extends IGetProductArgs {
+interface IGetProductByEan extends IGetProductsByArgs {
   id: string | number
 }
 
@@ -9,16 +9,14 @@ interface IGetProductByEan extends IGetProductArgs {
  * @module product
  */
 const getProductByEan = async ({
-  id, headers, accountName, auth,
+  id, ...rest
 }: IGetProductByEan): Promise<IGetProductResponse> => {
-  const { json, ...rest } = await searchProduct({
+  const { json, ...restRes } = await searchProduct({
     fq: `alternateIds_Ean:${id}`,
-    headers,
-    accountName,
-    auth,
+    ...rest,
   });
 
-  return { json: head(json), ...rest };
+  return { json: head(json), ...restRes };
 };
 
 export default getProductByEan;

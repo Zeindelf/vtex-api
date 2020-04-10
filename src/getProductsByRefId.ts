@@ -1,6 +1,6 @@
 import searchProduct from './searchProduct';
 
-interface IGetProductsByRefId extends IGetProductArgs {
+interface IGetProductsByRefId extends IGetProductsByArgs {
   ids: any[]
 }
 
@@ -8,13 +8,11 @@ interface IGetProductsByRefId extends IGetProductArgs {
  * @module product
  */
 const getProductsByRefId = async ({
-  ids, headers, accountName, auth,
+  ids, ...rest
 }: IGetProductsByRefId): Promise<IGetProductsResponse> => (
   searchProduct({
     fq: ids.map((id) => `alternateIds_RefId:${id}`),
-    headers,
-    accountName,
-    auth,
+    ...rest,
   })
 );
 

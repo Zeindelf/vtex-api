@@ -49,6 +49,15 @@ interface ISearchProductArgs {
   auth?: IAuthentication
 }
 
+interface IGetProductsByArgs extends IGetProductArgs {
+  orderBy?: string
+  from?: number
+  to?: number
+  priceRange?: string
+  salesChannel?: string
+  seller?: string
+}
+
 interface IGetProductResponse extends IResponse {
   json: IProduct | false
 }
