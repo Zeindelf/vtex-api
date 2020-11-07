@@ -4,6 +4,8 @@ export { default as requestTimeout } from './requestTimeout';
 /** General */
 export { default as getCategories } from './getCategories';
 export { default as getCategoryById } from './getCategoryById';
+export { default as getSpecificationField } from './getSpecificationField';
+export { default as getSpecificationValues } from './getSpecificationValues';
 export { default as getBrandById } from './getBrandById';
 export { default as getBrands } from './getBrands';
 export { default as pageType } from './pageType';

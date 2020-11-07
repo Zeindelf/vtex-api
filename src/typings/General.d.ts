@@ -203,3 +203,40 @@ interface IBrand {
   metaTagDescription: string | null
   imageUrl: string | null
 }
+
+interface IGetSpecificationArgs {
+  fieldId: number | string
+  query?: string
+  headers?: string[]
+  accountName?: string
+  auth?: IAuthentication
+}
+
+interface IGetSpecificationField {
+  CategoryId: number | null
+  DefaultValue: number | null
+  Description: string
+  FieldGroupId: number
+  FieldGroupName: string
+  FieldId: number
+  FieldTypeId: number
+  FieldTypeName: string
+  FieldValueId: null
+  IsActive: boolean
+  IsFilter: boolean
+  IsOnProductDetails: boolean
+  IsRequired: boolean
+  IsSideMenuLinkActive: boolean
+  IsStockKeepingUnit: boolean
+  IsTopMenuLinkActive: false
+  IsWizard: boolean
+  Name: string
+  Position: number
+}
+
+interface ISpecificationFieldValue {
+  FieldValueId: number
+  IsActive: boolean
+  Position: number
+  Value: string
+}
