@@ -73,8 +73,8 @@ describe('request()', () => {
       } catch ({ response }) {
         const { status, statusText } = response;
 
-        expect(status).toBe(404);
-        expect(statusText).toBe('Not Found');
+        expect(status).toBe(404); // eslint-disable-line
+        expect(statusText).toBe('Not Found'); // eslint-disable-line
       }
     });
   });

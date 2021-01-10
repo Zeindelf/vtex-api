@@ -1,10 +1,10 @@
-module.exports =  {
+module.exports = {
   env: {
     browser: true,
     node: true,
     es6: true,
   },
-  extends:  [
+  extends: [
     'airbnb-typescript/base',
     'plugin:promise/recommended',
     'plugin:import/errors',
@@ -12,7 +12,7 @@ module.exports =  {
     'plugin:jest/all',
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions:  {
+  parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
     project: './tsconfig.json',
@@ -26,7 +26,7 @@ module.exports =  {
     'promise',
     'jest',
   ],
-  rules:  {
+  rules: {
     'linebreak-style': 'off', // Avoid LF/CRLF on Win/Linux/Mac
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
