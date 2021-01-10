@@ -23,7 +23,7 @@ import masterdataRequest from './masterdataRequest';
  * @return {promise}
  */
 const partialUpdate = ({
-  id, data, entity, auth, accountName,
+  id, data, entity, auth, accountName, an,
 }: IPartialUpdateArgs): Promise<IResponse> => (
   masterdataRequest({
     method: 'PATCH',
@@ -33,6 +33,7 @@ const partialUpdate = ({
     type: 'documents',
     auth,
     accountName,
+    an,
   })
 );
 

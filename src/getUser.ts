@@ -19,7 +19,7 @@ import searchDocument from './searchDocument';
  * @return {promise}
  */
 const getUser = ({
-  email, fields, auth, accountName,
+  email, fields, auth, accountName, an,
 }: IGetUserArgs): Promise<IResponse> => {
   if (!isEmail(email)) return Promise.reject(new Error('Invalid email'));
 
@@ -31,6 +31,7 @@ const getUser = ({
     limit: 1,
     auth,
     accountName,
+    an,
   });
 };
 

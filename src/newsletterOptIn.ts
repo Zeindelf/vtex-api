@@ -21,7 +21,7 @@ import updateUser from './updateUser';
  * @return {promise}
  */
 const newsletterOptIn = ({
-  email, optIn = true, data, auth, accountName,
+  email, optIn = true, data, auth, accountName, an,
 }: INewsletterOptInArgs): Promise<IResponse> => (
   updateUser({
     email,
@@ -31,6 +31,7 @@ const newsletterOptIn = ({
     },
     auth,
     accountName,
+    an,
   })
 );
 

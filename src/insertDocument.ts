@@ -22,7 +22,7 @@ import masterdataRequest from './services/masterdataRequest';
  * @return {promise}
  */
 const insertDocument = ({
-  data, entity, auth, accountName,
+  data, entity, auth, accountName, an,
 }: IInsertDeocumentArgs): Promise<IResponse> => (
   masterdataRequest({
     method: 'POST',
@@ -31,6 +31,7 @@ const insertDocument = ({
     type: 'documents',
     auth,
     accountName,
+    an,
   })
 );
 

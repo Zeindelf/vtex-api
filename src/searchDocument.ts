@@ -1,4 +1,4 @@
-import parseFileds from './internal/parseFields';
+import parseFields from './internal/parseFields';
 
 import masterdataRequest from './services/masterdataRequest';
 
@@ -32,15 +32,15 @@ import masterdataRequest from './services/masterdataRequest';
  * @return {promise}
  */
 const searchDocument = ({
-  search, entity, fields, filters, offset = 0, limit = 49, auth, accountName,
+  search, entity, fields, filters, offset = 0, limit = 10, auth, accountName, an,
 }: ISearchDocumentArgs): Promise<IResponse> => {
-  // Needs refactor to _from/_to args
+  // Needs refactor to _from/_to args when available
   const headers = [`REST-Range: resources=${offset}-${limit + offset}`];
 
   const args = {
     ...search,
     ...filters,
-    _fields: parseFileds(fields),
+    _fields: parseFields(fields),
   };
 
   return masterdataRequest({
@@ -51,6 +51,7 @@ const searchDocument = ({
     headers,
     auth,
     accountName,
+    an,
   });
 };
 

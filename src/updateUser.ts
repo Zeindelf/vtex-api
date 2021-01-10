@@ -26,16 +26,16 @@ import insertDocument from './insertDocument';
  * @return {promise}
  */
 const updateUser = async ({
-  email, data, auth, accountName,
+  email, data, auth, accountName, an,
 }: IUpdateUserArgs): Promise<IResponse> => {
   const { json } = await getUser({ email, fields: ['id'] });
 
   return resultOk(json)
     ? partialUpdate({
-      id: head(json).id, data, entity: 'CL', auth, accountName,
+      id: head(json).id, data, entity: 'CL', auth, accountName, an,
     })
     : insertDocument({
-      data: { email, ...data }, entity: 'CL', auth, accountName,
+      data: { email, ...data }, entity: 'CL', auth, accountName, an,
     });
 };
 

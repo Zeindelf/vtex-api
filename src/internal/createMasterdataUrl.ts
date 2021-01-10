@@ -5,12 +5,12 @@ import hostname from './hostname';
  * @module masterdata
  */
 const createMasterdataUrl = ({
-  entity, type, id, method, data, accountName,
+  entity, type, id, method, data, accountName, an,
 }: IMasterdataArgs): string => {
   const mountedUrl = `${hostname(accountName)}/api/dataentities/${entity}/${type}/${id || ''}`;
   const mountedData = data ? `?${encode(data)}` : '';
-  const hasAn = data && Object.prototype.hasOwnProperty.call(data, 'an');
-  const url = (method === 'GET' || hasAn) ? `${mountedUrl}${mountedData}` : mountedUrl;
+  const mountedAn = an ? `?${encode({ an })}` : '';
+  const url = method === 'GET' ? `${mountedUrl}${mountedData}` : `${mountedUrl}${mountedAn}`;
 
   return url;
 };

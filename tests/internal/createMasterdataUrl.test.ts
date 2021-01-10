@@ -34,10 +34,10 @@ describe('createMasterdataUrl()', () => {
     );
   });
 
-  it('should create an POST method and ignore data', () => {
+  it('should create an POST method with an', () => {
     expect.assertions(1);
 
-    const params = { ...baseParams, method: 'POST', data: { an: 'storename' } };
+    const params = { ...baseParams, method: 'POST', an: 'storename' };
     expect(createMasterdataUrl(params)).toStrictEqual(
       '/api/dataentities/AA/search/?an=storename',
     );

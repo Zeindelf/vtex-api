@@ -7,20 +7,21 @@ import request from '../request';
  * @module masterdata
  */
 const masterdataRequest = ({
-  entity, type, id, method, data, headers, accountName, auth,
+  entity, type, id, method, data, headers, accountName, auth, an,
 }: IMasterdataRequestArgs): Promise<any> => {
+  const isGet = method === 'GET';
   const authentication = createAuthentication(auth);
   const url = createMasterdataUrl({
-    entity, type, id, method, data, accountName,
+    entity, type, id, method, data, accountName, an,
   });
-  const defaults = [
+  const defaults = (isGet && an) ? [] : [
     'Accept: application/vnd.vtex.ds.v10+json',
     'Content-Type: application/json; charset=utf-8',
   ];
 
   const config = {
     method,
-    body: method !== 'GET' ? JSON.stringify(data) : null,
+    body: !isGet ? JSON.stringify(data) : null,
     headers: new Headers(createHeaders(
       defaults.concat(headers || []).concat(authentication || []).filter(Boolean),
     )),

@@ -11,6 +11,7 @@ interface IMasterdataArgs {
   id?: string
   data?: IObj
   accountName?: string
+  an?: string
 }
 
 interface IMasterdataRequestArgs {
@@ -22,6 +23,7 @@ interface IMasterdataRequestArgs {
   headers?: string[]
   accountName?: string
   auth?: IAuthentication
+  an?: string
 }
 
 interface ISearchDocumentArgs {
@@ -33,6 +35,7 @@ interface ISearchDocumentArgs {
   limit?: number
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IInsertDeocumentArgs {
@@ -40,6 +43,7 @@ interface IInsertDeocumentArgs {
   entity: string
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IPartialUpdateArgs {
@@ -48,6 +52,7 @@ interface IPartialUpdateArgs {
   entity: string
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IGetDocumentArgs {
@@ -56,6 +61,7 @@ interface IGetDocumentArgs {
   entity: string
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IGetUserArgs {
@@ -63,6 +69,7 @@ interface IGetUserArgs {
   fields: string[]
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IUpdateUserArgs {
@@ -70,6 +77,7 @@ interface IUpdateUserArgs {
   data: IObj
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface INewsletterOptInArgs {
@@ -78,6 +86,7 @@ interface INewsletterOptInArgs {
   data?: IObj
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IAttachmentArgs {
@@ -87,6 +96,7 @@ interface IAttachmentArgs {
   field: string
   auth?: IAuthentication
   accountName?: string
+  an?: string
 }
 
 interface IUploadFileArgs {
