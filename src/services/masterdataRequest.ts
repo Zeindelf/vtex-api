@@ -14,7 +14,7 @@ const masterdataRequest = ({
   const url = createMasterdataUrl({
     entity, type, id, method, data, accountName, an,
   });
-  const defaults = (isGet && an) ? [] : [
+  const defaults = [
     'Accept: application/vnd.vtex.ds.v10+json',
     'Content-Type: application/json; charset=utf-8',
   ];
